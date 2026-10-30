@@ -4,7 +4,7 @@
 
 [![Visão geral do Postinho de Saúde](docs/assets/tela-01-1366.webp)](docs/assets/tela-01-1366.webp)
 
-**Versão atual:** 1.0.0 (Android `versionCode 1`, MSIX `1.0.0.0`) • **Plataformas:** Android 7+ (arm64) e Windows 10/11 (x64) • **Site:** [wavizo-bot.github.io/Postinho-de-Saude](https://wavizo-bot.github.io/Postinho-de-Saude/) • **Download:** [página do app](https://wavizo-bot.github.io/Postinho-de-Saude/app/)
+**Versão atual:** 1.0.0 (Android `versionCode 1`, MSIX `1.0.0.0`) • **Plataformas:** Android 7+ (arm64) e Windows 10/11 (x64) • **Site:** [wavizo-bot.github.io/Postinho-de-Saude](https://wavizo-bot.github.io/Postinho-de-Saude/) • **Download:** [página do app](https://wavizo-bot.github.io/Postinho-de-Saude/app/) • **Release:** [v1.0.0.0](https://github.com/wavizo-bot/Postinho-de-Saude/releases/tag/v1.0.0.0)
 
 > **Aviso:** este é um jogo independente, fictício e humorístico. Não é sistema oficial do SUS, de prefeitura ou de qualquer órgão público; não é prontuário, dispositivo médico, treinamento certificado ou ferramenta de decisão clínica. Nomes, personagens e situações são inventados.
 

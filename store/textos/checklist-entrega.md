@@ -37,8 +37,9 @@ Versão de referência: 1.0.0
 - [x] Documentos legais públicos
 - [x] robots.txt e sitemap.xml
 - [x] Resumo em inglês
-- [ ] Teste HTTP 200 após o deploy
-- [ ] Teste visual em 1366x768 e 390x844
+- [x] Teste HTTP 200 após o deploy
+- [x] Teste visual em 1366x768 e 390x844
+- [x] Release v1.0.0.0 publicada com pacotes e checksums
 
 ## Regras de conteúdo
 

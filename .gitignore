@@ -10,10 +10,10 @@ google-client.json
 .env.*
 segredos.json
 
-# Builds, caches e artefatos gerados.
-build/
-android/
-.godot/
+# Builds, caches e artefatos gerados (somente nas pastas da raiz).
+/build/
+/android/
+/.godot/
 *.tmp
 tmp/
 dist/

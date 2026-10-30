@@ -30,9 +30,10 @@ Licença: uso pessoal/educativo não comercial; ver LICENSE e Termos.
 
 Status de entrega:
 - Código, dados, testes, documentação e assets de loja: prontos.
-- Landing e documentos legais: prontos.
+- Landing, documentos legais e página /app/: publicados no GitHub Pages.
 - Build Android AAB com R8: gerado e verificado localmente.
-- Build Windows/MSIX: gerado e verificado localmente.
+- Build Windows/MSIX: gerado, instalado e aberto nesta máquina; gameplay conferido.
+- Repositório público, Pages e release v1.0.0.0: publicados em 30/10/2026.
 - Teste em aparelho Android físico: PENDENTE (sem depuração USB/sem fio ativa).
 - Publicação na Google Play: PENDENTE (conta/credenciais externas).
 - Publicação na Microsoft Store: PENDENTE (conta/credenciais externas).
@@ -86,6 +87,8 @@ tools/
   stamp_version.ps1      carimba e confere a versão
   segredos.ps1           lê o cofre local e patcha/restaura o preset
   verificar_aab.py       confere r8.json, mapping, DEX e nativos no AAB
+  preparar_entrega.ps1   copia pacotes finais e gera SHA256SUMS.txt
+  auditar_publicacao.py  confere UTF-8, links, checksums e versão
   gerar_icone.py         ícone 512x512, ICO, logos MSIX e favicon
   gerar_assets_loja.py   capturas de loja, artes e WebP da landing
   android/               build.gradle, gradle.properties e proguard-rules.pro
@@ -97,6 +100,7 @@ docs/
   app/index.html         página de download (não é build web)
   robots.txt, sitemap.xml
   estilo.css
+  .gdignore              impede o Godot de importar os assets web
   assets/                ícone, OG 1200x630, 6 WebP 1366 e 6 WebP 390
 store/
   play/                  ícone 512, feature 1024x500 e 6 capturas
@@ -186,6 +190,10 @@ O script lê project.godot e export_presets.cfg, falha se divergirem e grava
 version.json. O app lê version.json; no Android, confirma o pacote instalado pelo
 PackageManager (AndroidRuntime).
 
+Execução confirmada em 30/10/2026: TODOS OS 245 TESTES PASSARAM e
+CLIQUES OK: 111 verificações. Os avisos de ObjectDB no fim dos testes são
+conhecidos do Godot e não indicam falha funcional.
+
 8. CREDENCIAIS E SEGREDOS
 --------------------------------------------------------------------------------
 NUNCA versionar. O cofre fica fora do repositório, na pasta local de credenciais
@@ -198,8 +206,10 @@ do autor (ID.OAuth/postinho), com:
 Os scripts tools/segredos.ps1 e tools/build_*.ps1 leem o cofre, preenchem
 temporariamente export_presets.cfg ou usam o PFX e restauram o preset ao final.
 O keystore e o PFX NÃO ficam no Git. O certificado público .cer pode ser
-distribuído para o sideload do MSIX. O token do GitHub é lido via git credential
-fill em tempo de publicação e nunca é impresso nem gravado.
+distribuído para o sideload do MSIX. O APK universal é assinado com a mesma
+chave de release do AAB; nenhum keystore é mantido em build/android. O token do
+GitHub é lido via git credential fill em tempo de publicação e nunca é impresso
+nem gravado.
 
 9. BUILD WINDOWS / MSIX
 --------------------------------------------------------------------------------
@@ -210,11 +220,15 @@ O script:
 3. monta o staging com AppxManifest.xml, Assets e executável;
 4. empacota com makeappx, assina com signtool e verifica;
 5. desempacota e confere a versão do manifesto e ausência de perfis WebView2;
-6. copia MSIX, .cer e VERIFICACAO.txt para build/entrega e build/msix.
+6. grava MSIX, .cer e VERIFICACAO.txt em build/msix.
+A pasta final build/entrega é montada por tools/preparar_entrega.ps1, que copia
+AAB, APK, MSIX e .cer com nomes estáveis e gera SHA256SUMS.txt.
 
 Para instalar localmente, importe o .cer em LocalMachine\Root e
 LocalMachine\TrustedPeople (admin) e use Add-AppxPackage. O certificado de teste
-serve só para sideload; a Microsoft Store reassina o pacote.
+serve só para sideload; a Microsoft Store reassina o pacote. O MSIX 1.0.0.0 foi
+instalado e aberto nesta máquina; a tela inicial mostrou v1.0.0 e o mundo do jogo
+carregou normalmente.
 
 10. BUILD ANDROID / AAB
 --------------------------------------------------------------------------------
@@ -231,7 +245,15 @@ O script:
 
 O AAB é o artefato de loja; o APK universal serve para teste local. O Android
 está configurado com R8 full mode, minifyEnabled true, shrinkResources true e
-proguard-rules.pro próprio em tools/android/.
+proguard-rules.pro próprio em tools/android/. O AGP é fixado em 8.10.1 para que
+o AAB inclua o r8.json exigido pelo relatório de otimização da Google Play.
+
+Artefatos finais de 30/10/2026:
+- AAB 25.753.160 bytes, SHA256 F72B578B2127DC01319081116CFB4637BBDA12A504318DE30CC543791496660F.
+- APK universal 73.573.172 bytes, SHA256 5A3F66D7224A06EF520B3AC370AE5A71536FD97BE25C4E0F0BBFF6472A3D6596.
+- APKS 73.573.506 bytes, SHA256 E4DDD44C1D463E0A925E0572BD77156F9DBFB2B95BF4B8C0A8377CB2D788ECE8.
+- R8 8.10.24; mapping.txt 2.508.326 bytes; 1 DEX; 1 nativo; targetSdk 36;
+  minSdk 24; sem AD_ID; jarsigner e apksigner aprovados.
 
 11. TESTE NO APARELHO E IMPEDIMENTOS
 --------------------------------------------------------------------------------
@@ -244,23 +266,30 @@ a leitura dinâmica da versão pelo PackageManager em hardware real.
 Outros impedimentos:
 - Contas/credenciais da Google Play e da Microsoft Store não fornecidas; uploads
   de loja não realizados.
-- Teste do MSIX em máquina limpa não realizado; só verificação local de pacote,
-  assinatura e manifesto.
+- Teste do MSIX em máquina limpa não realizado; nesta máquina o pacote foi
+  instalado, aberto e o gameplay foi conferido.
 - Não há versão web jogável; docs/app/ é página de download.
 - Logs de teste podem exibir avisos de vazamento ObjectDB do Godot; os testes
   terminam com 245/245 e 111/111 e não indicam falha funcional.
 
 12. PUBLICAÇÃO GITHUB / PAGES / RELEASE
 --------------------------------------------------------------------------------
-Repositório público: wavizo-bot/Postinho-de-Saude, branch main, remoto origin.
-Pages: Deploy from a branch, main, /docs, HTTPS.
-Release: tag v1.0.0.0 com AAB, APK universal, MSIX, certificado .cer, checksums
-e notas de versão.
-A página docs/app/ deve listar os mesmos arquivos e os mesmos SHA256 da release.
-Nunca publicar placeholder, página em construção ou versão diferente do pacote.
-Após o push, testar HTTP 200 em /, /app/, documentos legais, imagens e favicon;
-testar layout em 1366x768 e 390x844. Registrar commit, tag, versão e testes no
-log.txt local.
+Publicado em 30/10/2026:
+- Repositório público: https://github.com/wavizo-bot/Postinho-de-Saude
+- Branch main, remoto origin, commit 59eddb39457b4472efc50773b71f3dc6bdf598ae.
+- Pages: Deploy from a branch, main, /docs, HTTPS.
+  https://wavizo-bot.github.io/Postinho-de-Saude/
+- Release: tag v1.0.0.0, com AAB, APK universal, MSIX, certificado .cer,
+  SHA256SUMS.txt e notas de versão.
+  https://github.com/wavizo-bot/Postinho-de-Saude/releases/tag/v1.0.0.0
+- A página docs/app/ lista os mesmos arquivos e os mesmos SHA256 da release.
+- Testes públicos: HTTP 200 em /, /app/, documentos legais, imagens, favicon,
+  robots, sitemap, repositório e release; layouts 1366x768 e 390x844 sem overflow.
+- Os assets da release respondem 200 com os tamanhos esperados.
+
+Regras de manutenção: nunca publicar placeholder, página em construção ou versão
+diferente do pacote. Depois de qualquer alteração, rodar tools/auditar_publicacao.py,
+commitar em main, aguardar o build do Pages e repetir os testes de URL e layout.
 
 13. ARMADILHAS CONHECIDAS
 --------------------------------------------------------------------------------
@@ -288,10 +317,29 @@ log.txt local.
 - 30/10/2026: versão 1.0.0; testes 245/245 e 111/111; capturas e assets de loja;
   ícone novo; R8/target 36; segredos movidos para fora do repositório; landing,
   documentos legais, README, manual, licença e textos de loja.
-- 30/10/2026: builds finais Windows/MSIX e Android/AAB; publicação GitHub Pages
-  e release v1.0.0.0 (ver log.txt local e releases do repositório).
+- 30/10/2026: builds finais Windows/MSIX e Android/AAB; MSIX instalado, aberto e
+  com gameplay conferido; publicação GitHub Pages e release v1.0.0.0; URLs
+  públicas e layouts 1366x768/390x844 testados.
 - Pendente: teste em aparelho Android físico, teste do MSIX em máquina limpa,
   publicação nas lojas e eventual feedback de usuários.
+
+16. ARTEFATOS E CHECKSUMS DA VERSÃO 1.0.0
+--------------------------------------------------------------------------------
+Pasta local build/entrega/ (gerada por tools/preparar_entrega.ps1):
+- PostinhoDeSaude-1.0.0.aab — 25.753.160 bytes
+  SHA256 F72B578B2127DC01319081116CFB4637BBDA12A504318DE30CC543791496660F
+- PostinhoDeSaude-1.0.0-universal.apk — 73.573.172 bytes
+  SHA256 5A3F66D7224A06EF520B3AC370AE5A71536FD97BE25C4E0F0BBFF6472A3D6596
+- PostinhoDeSaude-1.0.0.0-x64.msix — 39.750.722 bytes
+  SHA256 7C6FE441C879E9C6F318CE75AEF0404F247433204588C3F84145E90D5E9CCDE3
+- PostinhoDeSaude-teste.cer — 702 bytes
+  SHA256 2366173E67F77883DE49601264DC10FFB1569688D05CA87970AC1B008AECB988
+- SHA256SUMS.txt — checksums dos quatro arquivos acima.
+
+Esses mesmos arquivos estão na release v1.0.0.0. A release também pode ser
+conferida pela API do GitHub; o SHA256SUMS.txt publicado deve ser idêntico ao
+local. O certificado .cer é público e serve para o sideload do MSIX de teste;
+o .pfx correspondente permanece no cofre fora do repositório.
 
 15. CONTATO E RETOMADA
 --------------------------------------------------------------------------------
