@@ -1,0 +1,302 @@
+================================================================================
+MANUAL DO PROJETO — POSTINHO DE SAÚDE
+Versão 1.0.0 • atualizado em 30/10/2026
+Fonte de retomada: leia este arquivo antes de mexer no projeto.
+================================================================================
+
+1. O QUE É
+--------------------------------------------------------------------------------
+Jogo 2D independente, offline e humorístico sobre a rotina de um Agente
+Comunitário de Saúde (ACS) em um postinho fictício. O jogador acolhe pacientes,
+conversa com a equipe, assume demandas, usa computadores, conserta a impressora,
+procura pastas de exame, passa na copa e tenta manter o posto funcionando.
+
+Não é sistema oficial do SUS, prontuário, dispositivo médico, treinamento
+certificado ou ferramenta de decisão clínica. Não há prova, nota, game over ou
+avaliação de competência. Personagens, nomes, falas, situações e unidades são
+fictícios. Parte da equipe e dos pacientes é animal antropomórfico, tratada como
+pessoa normal.
+
+Público: pessoas que gostam de simulação leve, humor nonsense e do cotidiano de
+serviços públicos. Conteúdo em português do Brasil.
+
+2. ESTADO ATUAL
+--------------------------------------------------------------------------------
+Versão carimbada: 1.0.0.
+Android: versionCode 1, versionName 1.0.0, minSdk 24, targetSdk 36, arm64-v8a.
+Windows/MSIX: 1.0.0.0, x64.
+Canal: release.
+Licença: uso pessoal/educativo não comercial; ver LICENSE e Termos.
+
+Status de entrega:
+- Código, dados, testes, documentação e assets de loja: prontos.
+- Landing e documentos legais: prontos.
+- Build Android AAB com R8: gerado e verificado localmente.
+- Build Windows/MSIX: gerado e verificado localmente.
+- Teste em aparelho Android físico: PENDENTE (sem depuração USB/sem fio ativa).
+- Publicação na Google Play: PENDENTE (conta/credenciais externas).
+- Publicação na Microsoft Store: PENDENTE (conta/credenciais externas).
+- Teste de instalação do MSIX em outra máquina: PENDENTE.
+- Versão web jogável: NÃO EXISTE. `docs/app/` é página de download.
+
+3. IDENTIDADE E CANAIS
+--------------------------------------------------------------------------------
+Nome comercial: Postinho de Saúde.
+Nome técnico: Postinho de Saude (sem acento em manifests e nomes de arquivo).
+Pacote Android: br.com.postinhodesaude.jogo.
+MSIX Identity Name: Postinho.PostinhoDeSaude.
+MSIX Publisher: CN=Postinho de Saude.
+Contato: mmr05@hotmail.com • +55 11 97883-1938.
+Repositório: https://github.com/wavizo-bot/Postinho-de-Saude
+Landing: https://wavizo-bot.github.io/Postinho-de-Saude/
+Download: https://wavizo-bot.github.io/Postinho-de-Saude/app/
+Releases: https://github.com/wavizo-bot/Postinho-de-Saude/releases
+Autor: wavizo.
+
+4. ESTRUTURA DE PASTAS E ARQUIVOS
+--------------------------------------------------------------------------------
+data/
+  config.json      regras numéricas (energia, tarefas, café, pacientes, PCs,
+                   impressora, exames, equipe, distribuição etc.)
+  demandas.json    falas e consequências das demandas da equipe
+  papos.json       conversas de corredor e respostas sociais
+  layout.json      posições de salas, cadeiras, PCs, impressora, entrada e HUD
+  npcs.json        nomes, sobrenomes, aparências, espécies e funcionários
+  textos.json      textos fixos da interface
+scenes/
+  Main.tscn        cena principal
+scripts/
+  GameManager.gd   estado da sessão, save, sorteios e simulação
+  main.gd          entrada, câmera, mundo e loop
+  Visual.gd        desenho procedural dos personagens e cenário
+  VersaoPostinho.gd leitura dinâmica da versão (version.json + Android)
+  (demais scripts de personagens, PCs, salas, impressora, exames)
+sprites/           desenhos internos
+tiles/             tiles do cenário
+ui/
+  Hud.gd           HUD, menu, diálogos, tela inicial e interação
+tests/
+  testes.gd        testes de regras (headless)
+  cliques.gd       testes de interface (janela)
+  capturar.gd      roteiro de capturas reais
+tools/
+  build_android_aab.ps1  export AAB, R8, assinatura, APK universal e verificação
+  build_msix.ps1         export Windows, MSIX, assinatura e verificação
+  preparar_android.ps1   extrai template e aplica R8
+  stamp_version.ps1      carimba e confere a versão
+  segredos.ps1           lê o cofre local e patcha/restaura o preset
+  verificar_aab.py       confere r8.json, mapping, DEX e nativos no AAB
+  gerar_icone.py         ícone 512x512, ICO, logos MSIX e favicon
+  gerar_assets_loja.py   capturas de loja, artes e WebP da landing
+  android/               build.gradle, gradle.properties e proguard-rules.pro
+docs/
+  index.html             landing
+  politica-de-privacidade.html
+  termos-de-servico.html
+  aviso-legal.html
+  app/index.html         página de download (não é build web)
+  robots.txt, sitemap.xml
+  estilo.css
+  assets/                ícone, OG 1200x630, 6 WebP 1366 e 6 WebP 390
+store/
+  play/                  ícone 512, feature 1024x500 e 6 capturas
+  microsoft/             6 capturas 1366x768, arte 720x1080, 720x1280,
+                         1080x1080 e faixa 1080x80
+  textos/                descrições Play/Microsoft, Data Safety e checklist
+version.json             versão carimbada do build
+export_presets.cfg       presets Windows/Android sem segredos
+project.godot            configuração da engine
+README.md                apresentação e instruções públicas
+manual.txt               este arquivo
+log.txt                  diário local de trabalho (ignorado pelo Git)
+AJUSTES.md               guia rápido de ajustes por JSON
+LICENSE                  licença de uso
+.gitignore               segredos, builds, caches e dados de execução
+
+5. FLUXO DO JOGO
+--------------------------------------------------------------------------------
+- Tela inicial oferece Continuar sessão (se existir save) ou Nova sessão.
+  A simulação fica pausada só na tela inicial e no menu.
+- Pacientes entram pela porta principal, passam pelo guichê e aguardam em
+  cadeiras ou em pé. Cada um tem tolerância sorteada entre 60 e 300 s. Fila
+  longa e espera aumentam a pressa/raiva; paciência esgotada gera desistência.
+- Salas: Chefe, Médica, Enfermeira, Vacina, Procedimentos e Copa. O jogador pode
+  usar salas vazias, exceto a da chefe. A copa dá café e energia.
+- Equipe e pacientes têm rotinas, falas e conversas de corredor. Conversas,
+  consertos e exames NÃO pausam o posto.
+- 3 PCs internos para ACS e 3 de recepção. A distribuição das estações é sorteada
+  em 40% um interno, 40% uma recepção, 10% um de cada e 10% nenhum. Cada PC tem
+  10% de chance de problema leve (rende 50%) ou grave (inutilizável), sem
+  inutilizar o último PC interno funcional.
+- Impressora quebra com frequência; o conserto é um minijogo de repetir a ordem
+  de 3 fios coloridos. O arquivo de exames é uma grade de 30 pastas; ache a pasta
+  creme com a cruz verde.
+- Energia máxima 5; cada tarefa custa 0,32 e rende 0,3125 por segundo. Esforço
+  manual acelera 25% e custa 25% a mais. Café recupera 1,0. Tarefas pendentes
+  limitadas a 10.
+- Save único local; autosave periódico, ao fechar e ao sair pelo sistema.
+- HUD sem contador de PCs livres e sem relógio de tempo jogado. Câmera por
+  arrastar e pinça. Menu inferior direito completo (personagem, aparência,
+  regras, sons, informações, link de release e contato).
+
+6. REGRAS, NÚMEROS E ARQUIVOS DE AJUSTE
+--------------------------------------------------------------------------------
+Quase tudo que muda o jogo está em data/*.json. Consulte AJUSTES.md para a lista
+campo a campo. Pontos críticos:
+- recurso.energia_max = 5.0; energia_inicial = 5.0; tarefas_max = 10;
+  custo_tarefa = 0.32; rendimento_trabalho_por_segundo = 0.3125.
+- esforco.bonus_velocidade = 0.25; bonus_custo = 0.25.
+- copa.tempo_cafe_s = 3.0; ganho_cafe = 1.0.
+- demandas: intervalo 7–14 s; vida 55–115 s; chance de desistência por segundo;
+  pausa de paciente; a demanda da chefe não expira.
+- presenca: primeiro paciente em 14 s; novos a cada 9–16 s; tempos de guichê,
+  recepção e sala; máximo de fila do guichê.
+- computadores.distribuicao = um_interno 40, uma_recepcao 40, um_de_cada 10,
+  nenhum 10; chance_problema = 0.10.
+- impressora: intervalo e chance de quebra; 3 fios.
+- exame: 30 pastas; custo de energia por erro.
+- sessao.salvar_a_cada_s: intervalo de autosave.
+- equipe: quantidade de funcionários e animais sorteados.
+
+7. COMO RODAR E TESTAR
+--------------------------------------------------------------------------------
+Pré-requisitos: Godot 4.7.2; Python 3 com Pillow para gerar ícones/assets; JDK 17,
+Android SDK e bundletool para AAB; Windows SDK (makeappx/signtool) para MSIX.
+
+Rodar no editor: abrir a pasta no Godot e pressionar F5.
+Rodar por linha de comando (dentro da raiz):
+  godot --path .
+
+Testes de regras (headless):
+  godot --headless --path . --script res://tests/testes.gd
+Resultado esperado nesta versão: TODOS OS 245 TESTES PASSARAM.
+
+Teste de interface (precisa de janela, nunca --headless):
+  godot --path . --resolution 1280x720 --script res://tests/cliques.gd
+Resultado esperado: CLIQUES OK: 111 verificações.
+O teste usa e restaura o save real do jogador.
+
+Capturas reais:
+  godot --path . --resolution 1280x720 --script res://tests/capturar.gd -- build/capturas
+  python tools/gerar_assets_loja.py
+
+Versão:
+  powershell -ExecutionPolicy Bypass -File tools/stamp_version.ps1
+O script lê project.godot e export_presets.cfg, falha se divergirem e grava
+version.json. O app lê version.json; no Android, confirma o pacote instalado pelo
+PackageManager (AndroidRuntime).
+
+8. CREDENCIAIS E SEGREDOS
+--------------------------------------------------------------------------------
+NUNCA versionar. O cofre fica fora do repositório, na pasta local de credenciais
+do autor (ID.OAuth/postinho), com:
+- keystore de release do Android;
+- alias e senhas do keystore;
+- PFX e senha do certificado MSIX de teste;
+- eventual token de publicação (não usado nesta entrega).
+
+Os scripts tools/segredos.ps1 e tools/build_*.ps1 leem o cofre, preenchem
+temporariamente export_presets.cfg ou usam o PFX e restauram o preset ao final.
+O keystore e o PFX NÃO ficam no Git. O certificado público .cer pode ser
+distribuído para o sideload do MSIX. O token do GitHub é lido via git credential
+fill em tempo de publicação e nunca é impresso nem gravado.
+
+9. BUILD WINDOWS / MSIX
+--------------------------------------------------------------------------------
+  powershell -ExecutionPolicy Bypass -File tools/build_msix.ps1
+O script:
+1. carimba a versão;
+2. exporta build/windows/PostinhoDeSaude.exe e .pck;
+3. monta o staging com AppxManifest.xml, Assets e executável;
+4. empacota com makeappx, assina com signtool e verifica;
+5. desempacota e confere a versão do manifesto e ausência de perfis WebView2;
+6. copia MSIX, .cer e VERIFICACAO.txt para build/entrega e build/msix.
+
+Para instalar localmente, importe o .cer em LocalMachine\Root e
+LocalMachine\TrustedPeople (admin) e use Add-AppxPackage. O certificado de teste
+serve só para sideload; a Microsoft Store reassina o pacote.
+
+10. BUILD ANDROID / AAB
+--------------------------------------------------------------------------------
+  powershell -ExecutionPolicy Bypass -File tools/build_android_aab.ps1
+O script:
+1. carimba a versão e prepara android/build com R8 full mode;
+2. preenche o preset com o keystore do cofre e exporta o AAB assinado;
+3. restaura o preset (sem segredos);
+4. confere r8.json (otimizações, minificação, shrinking), mapping.txt, DEX,
+   libgodot_android.so, versionCode/Name, targetSdk 36, AD_ID e debuggable;
+5. verifica a assinatura JAR com jarsigner;
+6. gera o APK universal assinado com bundletool;
+7. salva badging, apksigner, VERIFICACAO.txt e SHA256.txt.
+
+O AAB é o artefato de loja; o APK universal serve para teste local. O Android
+está configurado com R8 full mode, minifyEnabled true, shrinkResources true e
+proguard-rules.pro próprio em tools/android/.
+
+11. TESTE NO APARELHO E IMPEDIMENTOS
+--------------------------------------------------------------------------------
+Aparelho alvo informado: Xiaomi 2410CRP4CG. Em 30/10/2026 o `adb devices` estava
+vazio. O mDNS anunciava 192.168.31.105:40793, mas `adb connect` retornava conexão
+recusada. Falta ativar depuração USB ou depuração sem fio com pareamento válido.
+Sem isso, não foi possível instalar/abrir o APK universal no aparelho nem validar
+a leitura dinâmica da versão pelo PackageManager em hardware real.
+
+Outros impedimentos:
+- Contas/credenciais da Google Play e da Microsoft Store não fornecidas; uploads
+  de loja não realizados.
+- Teste do MSIX em máquina limpa não realizado; só verificação local de pacote,
+  assinatura e manifesto.
+- Não há versão web jogável; docs/app/ é página de download.
+- Logs de teste podem exibir avisos de vazamento ObjectDB do Godot; os testes
+  terminam com 245/245 e 111/111 e não indicam falha funcional.
+
+12. PUBLICAÇÃO GITHUB / PAGES / RELEASE
+--------------------------------------------------------------------------------
+Repositório público: wavizo-bot/Postinho-de-Saude, branch main, remoto origin.
+Pages: Deploy from a branch, main, /docs, HTTPS.
+Release: tag v1.0.0.0 com AAB, APK universal, MSIX, certificado .cer, checksums
+e notas de versão.
+A página docs/app/ deve listar os mesmos arquivos e os mesmos SHA256 da release.
+Nunca publicar placeholder, página em construção ou versão diferente do pacote.
+Após o push, testar HTTP 200 em /, /app/, documentos legais, imagens e favicon;
+testar layout em 1366x768 e 390x844. Registrar commit, tag, versão e testes no
+log.txt local.
+
+13. ARMADILHAS CONHECIDAS
+--------------------------------------------------------------------------------
+- O Godot recria android/build a partir do template; por isso as customizações
+  ficam em tools/android/ e são copiadas por tools/preparar_android.ps1.
+- O export Android exige o template da mesma versão do editor. Se falhar, instale
+  o modelo de compilação Android no editor.
+- Não usar caminhos absolutos do Windows em README, manual ou HTML público.
+- Não versionar .pfx, keystore, senhas, tokens, log.txt, build/, android/ ou
+  perfis WebView2.
+- O .cer público é ok; o .pfx não.
+- Textos devem ser UTF-8 sem BOM e U+FFFD = 0. Evitar salvar com editor que
+  converta para cp1252.
+- O HUD não deve voltar a exibir contador de PCs livres nem relógio de sessão.
+- O menu e a tela inicial pausam; diálogos, consertos e exames não pausam.
+- A sala da chefe não pode ser usada pelo jogador.
+- O APK universal é para teste; o AAB é o artefato de loja.
+- A versão exibida deve continuar vindo de VersaoPostinho, não de texto fixo.
+- O repositório é a fonte da verdade: Pages e release saem do commit de main.
+
+14. TIMELINE RESUMIDA
+--------------------------------------------------------------------------------
+- Out/2026: reformulação do jogo como simulador da rotina de ACS, visual fofo,
+  fluxo completo, humor, animais antropomórficos e nomes fictícios.
+- 30/10/2026: versão 1.0.0; testes 245/245 e 111/111; capturas e assets de loja;
+  ícone novo; R8/target 36; segredos movidos para fora do repositório; landing,
+  documentos legais, README, manual, licença e textos de loja.
+- 30/10/2026: builds finais Windows/MSIX e Android/AAB; publicação GitHub Pages
+  e release v1.0.0.0 (ver log.txt local e releases do repositório).
+- Pendente: teste em aparelho Android físico, teste do MSIX em máquina limpa,
+  publicação nas lojas e eventual feedback de usuários.
+
+15. CONTATO E RETOMADA
+--------------------------------------------------------------------------------
+Contato: mmr05@hotmail.com • +55 11 97883-1938.
+Para retomar: leia README.md, este manual, AJUSTES.md e o log.txt local; rode os
+dois testes; confira version.json e export_presets.cfg; gere os assets; exporte os
+pacotes; verifique os artefatos; publique somente depois de GH9.
+================================================================================

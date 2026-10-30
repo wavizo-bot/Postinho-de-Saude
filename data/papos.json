@@ -1,0 +1,870 @@
+{
+  "chefe": [
+    {
+      "id": "chefe_capivaras",
+      "tipo": "fala",
+      "texto": "Atenção: as capivaras estão ocupando as casas da rua de baixo. Nada de pânico — elas só querem o quintal, a piscina e, pelo visto, o Wi-Fi.",
+      "opcoes": [
+        {"texto": "Vou avisar os moradores com jeitinho.", "resposta": "Obrigada. E se alguma capivara pedir Cartão SUS, explique que o cadastro é no posto, não na represa."},
+        {"texto": "Posso negociar com elas?", "resposta": "Pode. Leve o crachá: capivara respeita hierarquia. E leve manga, porque diplomacia exige lanche."}
+      ]
+    },
+    {
+      "id": "chefe_planilha",
+      "tipo": "pergunta",
+      "texto": "Você consegue me explicar por que a planilha de atendimentos tem uma aba chamada 'não olhar'?",
+      "opcoes": [
+        {"texto": "Vou conferir e organizar os dados.", "resposta": "Ótimo. Se aparecer uma fórmula que parece receita de bolo, não execute. Já perdemos uma tarde assim."},
+        {"texto": "Acho melhor não olhar.", "resposta": "Foi o que eu temi. A aba tem 14 gráficos e um deles me encara. Chame alguém de informática."}
+      ]
+    },
+    {
+      "id": "chefe_cracha",
+      "tipo": "fala",
+      "texto": "Achei um crachá no jardim. O nome está ilegível, mas a foto é de uma capivara de colete. Isso é RH ou zoonose?",
+      "opcoes": [
+        {"texto": "Vou procurar o dono do crachá.", "resposta": "Boa. Comece pela capivara da praça. Ela tem boleto em atraso e um olhar de quem sabe demais."},
+        {"texto": "Talvez seja o novo estagiário.", "resposta": "Então já está mais qualificado que a última planilha. Mas confira a carteira de vacinação antes."}
+      ]
+    },
+    {
+      "id": "chefe_busca",
+      "tipo": "fala",
+      "texto": "Preciso que avise os moradores: a equipe vai fazer busca ativa de vacinação. Leve o mapa, o bom humor e um guarda-chuva. Principalmente o guarda-chuva.",
+      "opcoes": [
+        {"texto": "Já organizo as visitas por rua.", "resposta": "Perfeito. O território é grande, mas com calma a gente alcança. E o guarda-chuva também alcança."},
+        {"texto": "O poodle pode ir junto?", "resposta": "Só se ele estiver com a vacina em dia e não morder o mapa. A última vez ele comeu a rua 7."}
+      ]
+    },
+    {
+      "id": "chefe_meta",
+      "tipo": "pergunta",
+      "texto": "Se a meta é acolher todo mundo, por que a sala de espera parece um campeonato de quem suspira mais alto?",
+      "opcoes": [
+        {"texto": "Vou reforçar o acolhimento na recepção.", "resposta": "Isso. Acolhimento não é só senha: é olhar nos olhos, explicar o fluxo e não deixar ninguém invisível."},
+        {"texto": "Posso distribuir leques?", "resposta": "Pode. Mas o que a fila quer mesmo é informação. Um leque com o tempo de espera seria luxo."}
+      ]
+    },
+    {
+      "id": "chefe_cafe",
+      "tipo": "fala",
+      "texto": "O café da copa acabou. Isso não é uma demanda formal, mas é uma emergência administrativa de nível laranja.",
+      "opcoes": [
+        {"texto": "Vou ver se consigo repor.", "resposta": "Meu heroísmo em forma de pó. Só não use a mesma colher do açúcar para mexer o prontuário."},
+        {"texto": "Água também hidrata.", "resposta": "Tecnicamente sim. Emocionalmente, não. A equipe precisa de um cheiro de café para acreditar que o dia andou."}
+      ]
+    },
+    {
+      "id": "chefe_capivara_prefeita",
+      "tipo": "fala",
+      "texto": "A capivara da praça mordeu a placa de 'silêncio'. Agora ela é oficialmente a nova gerente de comunicação.",
+      "opcoes": [
+        {"texto": "Vou orientar os moradores a não alimentar.", "resposta": "Isso. Ela já está muito empoderada. Na última reunião pediu aumento e uma piscina de lama."},
+        {"texto": "Ela dá entrevista coletiva?", "resposta": "Só responde com olhar de reprovação. É a melhor comunicação que tivemos em anos."}
+      ]
+    },
+    {
+      "id": "chefe_poodle",
+      "tipo": "pergunta",
+      "texto": "Um poodle de moicano está sentado na sala de espera. Ele é paciente, acompanhante ou o novo agente de saúde?",
+      "opcoes": [
+        {"texto": "Vou verificar com o tutor.", "resposta": "Obrigada. Se ele for acompanhante, precisa ficar junto do adulto. Se for paciente, merece uma ficha e um agrado."},
+        {"texto": "Pelo colete, é da equipe.", "resposta": "Então avise que a reunião é às 9h e que ele não pode rosnar para a lixeira. De novo."}
+      ]
+    },
+    {
+      "id": "chefe_relatorio",
+      "tipo": "pergunta",
+      "texto": "Este relatório diz que o posto atendeu 120 pessoas, 40 cafés e 3 capivaras. Você revisou os números?",
+      "opcoes": [
+        {"texto": "Vou revisar linha por linha.", "resposta": "Ótimo. Capivara não entra na estatística de atendimento, por mais que ela insista no guichê."},
+        {"texto": "As capivaras têm cadastro?", "resposta": "Não. E se tiverem, quero saber quem autorizou. A prefeitura não me avisou de nada."}
+      ]
+    },
+    {
+      "id": "chefe_equipe",
+      "tipo": "fala",
+      "texto": "A equipe é pequena, o território é enorme e o dia é curto. Por isso o acolhimento começa no guichê, passa pela escuta e termina no cuidado.",
+      "opcoes": [
+        {"texto": "Vou cuidar do fluxo sem perder as pessoas.", "resposta": "É isso. Gente não é senha. Cada ficha tem uma história, mesmo quando o sistema só mostra um número."},
+        {"texto": "E o café? Também é fluxo?", "resposta": "O café é infraestrutura emocional. Sem ele, o fluxo vira um rio de suspiros."}
+      ]
+    }
+  ],
+  "medica": [
+    {
+      "id": "medica_pipa",
+      "tipo": "fala",
+      "texto": "O seu Antônio caiu da caixa d'água enquanto empinava pipa. Está bem, mas ligue para a família e explique que a pipa não precisa de plano de saúde.",
+      "opcoes": [
+        {"texto": "Ligo agora e oriento sobre a queda.", "resposta": "Obrigada. Pergunte como ele está e se alguém consegue acompanhar. Queda em idoso não é só susto."},
+        {"texto": "Ele estava tentando bater recorde?", "resposta": "Pelo visto, sim. O recorde foi de altura e de preocupação. A pipa segue internada em observação."}
+      ]
+    },
+    {
+      "id": "medica_implanon",
+      "tipo": "fala",
+      "texto": "O implante de etonogestrel, o famoso Implanon, está disponível em alguns serviços. Quem se interessar precisa de avaliação — não é adesivo que cola e esquece.",
+      "opcoes": [
+        {"texto": "Explico isso com cuidado e sem julgamento.", "resposta": "Perfeito. Contracepção é escolha, não palpite. E o nome comercial pode variar no serviço público."},
+        {"texto": "Vou dizer que é um piercing científico.", "resposta": "Por favor, não. Já temos poodle de moicano demais nessa história."}
+      ]
+    },
+    {
+      "id": "medica_sal",
+      "tipo": "fala",
+      "texto": "Dona Zélia jurou que parou de salgar a comida. A pressão subiu quando ela contou que trocou o sal por caldo de galinha.",
+      "opcoes": [
+        {"texto": "Vou orientar sobre rótulos e temperos.", "resposta": "Isso. Caldo de galinha também tem sódio. Ensine a ler o rótulo e a usar ervas. Com afeto, porque a panela é dela."},
+        {"texto": "Caldo de galinha é um tempero?", "resposta": "É uma emboscada com nome simpático. A pressão da Dona Zélia que o diga."}
+      ]
+    },
+    {
+      "id": "medica_exame",
+      "tipo": "pergunta",
+      "texto": "Chegou um exame com a observação 'paciente chegou voando'. Confirme se era metáfora ou se o moço realmente veio de teleférico.",
+      "opcoes": [
+        {"texto": "Vou checar o encaminhamento.", "resposta": "Obrigada. Se for teleférico, quero o nome do paciente e da linha. Se for metáfora, quero entender por que o laboratório está poético."},
+        {"texto": "Talvez ele tenha vindo de capivara.", "resposta": "Capivara não voa, mas com o poodle no volante eu não duvido de nada."}
+      ]
+    },
+    {
+      "id": "medica_vacina_idoso",
+      "tipo": "fala",
+      "texto": "A vacina do idoso atrasou. Avise que a fila anda, mas o cafezinho também. A ciência é lenta, a copa é generosa.",
+      "opcoes": [
+        {"texto": "Vou manter todos informados.", "resposta": "Isso. Informação reduz ansiedade. E se alguém reclamar do café, você tem minha solidariedade médica."},
+        {"texto": "Posso cantar para passar o tempo?", "resposta": "Pode, mas só se souber uma música que não fale de espera. A fila já está sensível."}
+      ]
+    },
+    {
+      "id": "medica_saude_mental",
+      "tipo": "fala",
+      "texto": "Aquele paciente que dorme na praça veio conversar. Não é só 'sono atrasado': pode ser sofrimento psíquico. Vamos acolher sem julgar.",
+      "opcoes": [
+        {"texto": "Vou escutar e oferecer acolhimento.", "resposta": "Obrigada. Escutar já é cuidado. Se ele quiser, conecte com a equipe de saúde mental do território."},
+        {"texto": "Ele aceita um café primeiro?", "resposta": "Pode ajudar a criar vínculo. Só não transforme café em consulta. O cuidado precisa de escuta, não só de açúcar."}
+      ]
+    },
+    {
+      "id": "medica_gestante_manga",
+      "tipo": "pergunta",
+      "texto": "A gestante da rua 12 quer saber se pode comer manga. Pode. Pode também parar de perguntar para o poodle, que já deu três opiniões diferentes.",
+      "opcoes": [
+        {"texto": "Vou orientar e encaminhar ao pré-natal.", "resposta": "Isso. Alimentação tem contexto, e cada gestante precisa de acompanhamento. O poodle não tem CRM."},
+        {"texto": "E se a manga estiver verde?", "resposta": "Aí vira dieta de poodle. Brincadeira. O importante é lavar bem e manter a consulta em dia."}
+      ]
+    },
+    {
+      "id": "medica_nivaldo",
+      "tipo": "fala",
+      "texto": "Seu Nivaldo parou o remédio porque 'se sentiu bem'. Explique que pressão alta é que nem Wi-Fi: quando funciona, ninguém vê.",
+      "opcoes": [
+        {"texto": "Vou reforçar a importância do uso contínuo.", "resposta": "Obrigada. E marque retorno. Sentir-se bem não é o mesmo que estar controlado."},
+        {"texto": "Ele reiniciou porque o Wi-Fi caiu?", "resposta": "Não, mas a lógica é parecida. O sinal só aparece quando a gente procura. E a pressão, quando dá problema."}
+      ]
+    },
+    {
+      "id": "medica_dengue",
+      "tipo": "fala",
+      "texto": "A dengue não tira férias. Se encontrar água parada, não discuta com o mosquito: elimine o criadouro e registre a visita.",
+      "opcoes": [
+        {"texto": "Vou orientar e eliminar os focos.", "resposta": "Perfeito. E lembre: o mosquito não respeita cerca. O cuidado precisa ser coletivo."},
+        {"texto": "Posso mandar o poodle negociar?", "resposta": "Não. O mosquito não tem empatia e o poodle não tem paciência. Faça você mesmo."}
+      ]
+    },
+    {
+      "id": "medica_preventivo",
+      "tipo": "fala",
+      "texto": "Dona Ivone faltou ao preventivo porque o ônibus passou antes de ela terminar o cabelo. Reagende com carinho; cuidado não tem hora marcada.",
+      "opcoes": [
+        {"texto": "Vou ligar e reagendar com calma.", "resposta": "Obrigada. Pergunte o melhor horário e explique o exame. Às vezes o medo se disfarça de cabelo."},
+        {"texto": "Ela ganhou o dia da beleza?", "resposta": "Ganhou, mas perdeu o exame. Vamos tentar os dois. Beleza e saúde cabem no mesmo ônibus."}
+      ]
+    }
+  ],
+  "enfermeira": [
+    {
+      "id": "enf_higiene",
+      "tipo": "fala",
+      "texto": "O urologista comentou que o Brasil registra mais de 600 amputações de pênis por ano, muitas por câncer ligado à higiene e ao HPV. Falar disso sem vergonha também é cuidar.",
+      "opcoes": [
+        {"texto": "Vou orientar com respeito e discrição.", "resposta": "Obrigada. Higiene, vacina contra HPV e consulta quando algo mudar. Sem piada de mau gosto com o paciente."},
+        {"texto": "Isso é assunto de urologia?", "resposta": "É assunto de saúde. Nós acolhemos, orientamos e encaminhamos. E podemos começar quebrando o tabu."}
+      ]
+    },
+    {
+      "id": "enf_carteira",
+      "tipo": "fala",
+      "texto": "Uma criança escondeu a carteira de vacinação no sapato da avó. A avó achou que era um chulé histórico. Vamos atualizar as doses.",
+      "opcoes": [
+        {"texto": "Vou conferir a caderneta com a família.", "resposta": "Isso. Vacina atrasada não é motivo de vergonha; é oportunidade de proteger. E de comprar um sapato novo."},
+        {"texto": "A carteira sobreviveu?", "resposta": "Sobreviveu, mas está com cheiro de decisão difícil. Deixe secar e atualize os dados."}
+      ]
+    },
+    {
+      "id": "enf_joelho",
+      "tipo": "fala",
+      "texto": "Seu Bento pediu um curativo 'do tamanho do joelho'. O joelho tem o tamanho do joelho. A gente negocia.",
+      "opcoes": [
+        {"texto": "Vou explicar e fazer o curativo certo.", "resposta": "Boa. Explique que o objetivo é proteger, não embrulhar para presente. E não use fita isolante."},
+        {"texto": "Ele quer um curativo de capivara?", "resposta": "Ele quer um curativo digno de capivara. Só não temos esse tamanho no SUS."}
+      ]
+    },
+    {
+      "id": "enf_forro",
+      "tipo": "pergunta",
+      "texto": "A gestante quer saber se pode dançar forró até o nono mês. Se a obstetra liberou, pode. Mas o passo do capivara é opcional.",
+      "opcoes": [
+        {"texto": "Vou orientar sem proibir por esporte.", "resposta": "Isso. Cada gestação tem seu contexto. O pré-natal existe para cuidar, não para dar sermão."},
+        {"texto": "Posso ensinar o passo do capivara?", "resposta": "Pode, desde que ninguém caia. A sala de espera não é pista de dança... mas quase."}
+      ]
+    },
+    {
+      "id": "enf_hipertensos",
+      "tipo": "fala",
+      "texto": "A lista de hipertensos está com um nome repetido: 'Seu Nivaldo' aparece quatro vezes. Ele jura que é só um, mas o apetite por sal é quádruplo.",
+      "opcoes": [
+        {"texto": "Vou corrigir o cadastro e revisar a lista.", "resposta": "Ótimo. Cadastro organizado é cuidado. E o Nivaldo precisa de uma visita, não de quatro fichas."},
+        {"texto": "Talvez sejam quatro Nivaldos.", "resposta": "Se forem, todos precisam de consulta e de uma conversa sobre temperos. Principalmente sobre caldo de galinha."}
+      ]
+    },
+    {
+      "id": "enf_hpv",
+      "tipo": "fala",
+      "texto": "A vacina contra o HPV também é para meninos. Se ouvir alguém dizer que 'é coisa de menina', ofereça a caderneta e um chazinho de paciência.",
+      "opcoes": [
+        {"texto": "Vou explicar a importância para todos.", "resposta": "Perfeito. HPV não escolhe gênero. A vacina protege e reduz o risco de vários cânceres."},
+        {"texto": "O chá pode ser de camomila?", "resposta": "Pode. Mas o efeito principal é a informação. O chá só ajuda a conversa a descer."}
+      ]
+    },
+    {
+      "id": "enf_dente",
+      "tipo": "fala",
+      "texto": "Dona Neusa chegou com um dente de ouro e uma dúvida: 'isso conta como vacina?' Não, mas a escovação continua sendo o melhor brilho.",
+      "opcoes": [
+        {"texto": "Vou orientar sobre saúde bucal.", "resposta": "Isso. Escovação, fio dental e consulta regular. O dente de ouro é patrimônio, mas não substitui o cuidado."},
+        {"texto": "Ela quer vacina com glitter?", "resposta": "Só se o glitter for antisséptico. Melhor não. Vamos de vacina normal e escova macia."}
+      ]
+    },
+    {
+      "id": "enf_risco",
+      "tipo": "fala",
+      "texto": "A classificação de risco não é fila de banco. Quem chega com dor no peito passa na frente do resfriado. Explique isso com calma, sem fila dupla.",
+      "opcoes": [
+        {"texto": "Vou acolher e explicar a prioridade.", "resposta": "Obrigada. Prioridade não é privilégio: é segurança. E a fila entende melhor quando a gente explica."},
+        {"texto": "Posso chamar o poodle para organizar?", "resposta": "Não. Ele organiza por faro e morde a senha. Use o protocolo, que é mais confiável."}
+      ]
+    },
+    {
+      "id": "enf_visita",
+      "tipo": "fala",
+      "texto": "A próxima visita é na casa com 17 gatos e um papagaio que imita a sirene da ambulância. Leve fichas, não leve petiscos.",
+      "opcoes": [
+        {"texto": "Vou organizar a visita e o cadastro.", "resposta": "Isso. Aproveite para atualizar o território e orientar sobre vacinação. O papagaio já está imune a sustos."},
+        {"texto": "Posso levar um capacete?", "resposta": "Pode. O papagaio imita a sirene, mas não morde. Os gatos, sim, têm opinião formada."}
+      ]
+    },
+    {
+      "id": "enf_amamentacao",
+      "tipo": "pergunta",
+      "texto": "Uma mãe perguntou se pode amamentar depois de pintar o cabelo. Pode, mas o cheiro forte pode incomodar o bebê. O importante é manter a amamentação.",
+      "opcoes": [
+        {"texto": "Vou acolher e orientar com calma.", "resposta": "Perfeito. Amamentação é saúde para os dois. E dúvida de mãe não é incômodo: é pedido de apoio."},
+        {"texto": "E se o bebê pedir mechas?", "resposta": "Aí é caso de conversa com o salão. Mas garanto que leite materno não combina com tintura."}
+      ]
+    }
+  ],
+  "guiche": [
+    {
+      "id": "guiche_cartao",
+      "tipo": "fala",
+      "texto": "Um senhor chegou com a carteirinha do plano antigo, um comprovante de feira e uma foto do neto. Ajude a localizar o Cartão SUS sem rir da foto.",
+      "opcoes": [
+        {"texto": "Vou ajudar no cadastro com paciência.", "resposta": "Isso. O Cartão SUS é a porta de entrada. E a foto do neto é claramente um documento afetivo."},
+        {"texto": "A foto do neto vale como identidade?", "resposta": "Só no coração. No sistema, precisamos do Cartão SUS ou dos dados corretos."}
+      ]
+    },
+    {
+      "id": "guiche_fila",
+      "tipo": "fala",
+      "texto": "A fila está andando. O problema é que está andando para os lados, como caranguejo. Preciso que organize o fluxo do guichê.",
+      "opcoes": [
+        {"texto": "Vou reorganizar a fila e orientar.", "resposta": "Obrigado. Uma fila organizada não é só estética: é respeito, acessibilidade e menos ansiedade."},
+        {"texto": "Posso ensinar o passo do caranguejo?", "resposta": "Melhor não. A fila já está confusa. Vamos de fila única e informação clara."}
+      ]
+    },
+    {
+      "id": "guiche_senha",
+      "tipo": "pergunta",
+      "texto": "A senha 042 não aparece. O paciente diz que ela foi engolida pelo poodle. Verifique a máquina e pergunte se o poodle está bem.",
+      "opcoes": [
+        {"texto": "Vou checar o sistema e chamar a senha.", "resposta": "Ótimo. E se o poodle estiver com a senha, negocie com calma. Ele é neo-punk, mas é razoável."},
+        {"texto": "O poodle tem prioridade?", "resposta": "Não. Prioridade é da gestante, do idoso e de quem tem risco. O poodle entra na fila comum."}
+      ]
+    },
+    {
+      "id": "guiche_remedinho",
+      "tipo": "fala",
+      "texto": "Paciente chegou falando 'só quero um remedinho'. Pode ser acolhimento, escuta, consulta ou receita. Nosso trabalho é começar ouvindo.",
+      "opcoes": [
+        {"texto": "Vou escutar antes de encaminhar.", "resposta": "Isso. Escutar é o primeiro atendimento. A queixa pode parecer simples, mas a história raramente é."},
+        {"texto": "Remedinho é nome técnico?", "resposta": "É nome afetivo. No sistema, a gente traduz para consulta, acolhimento ou prescrição. Com carinho."}
+      ]
+    },
+    {
+      "id": "guiche_cadastro",
+      "tipo": "fala",
+      "texto": "Tem uma família nova no território. Três gerações, dois cachorros e uma discussão sobre quem é o responsável pelo gato. Atualize o cadastro.",
+      "opcoes": [
+        {"texto": "Vou cadastrar e atualizar o território.", "resposta": "Perfeito. Cadastro atualizado ajuda a equipe a chegar antes do problema. E o gato fica como patrimônio emocional."},
+        {"texto": "O gato tem Cartão SUS?", "resposta": "Não, mas tem plano de saúde mental para a família. Brincadeira. Cadastre as pessoas e deixe o gato fora do sistema."}
+      ]
+    },
+    {
+      "id": "guiche_gestante",
+      "tipo": "fala",
+      "texto": "Uma gestante chegou cansada. Ela tem prioridade por lei, não por simpatia. Acolha e explique para a fila com respeito.",
+      "opcoes": [
+        {"texto": "Vou garantir a prioridade com discrição.", "resposta": "Isso. Prioridade não precisa virar constrangimento. Acolha, explique e siga o fluxo."},
+        {"texto": "Posso oferecer a cadeira do poodle?", "resposta": "O poodle não tem cadeira. Ofereça uma cadeira de verdade e um copo de água, se possível."}
+      ]
+    },
+    {
+      "id": "guiche_grupo",
+      "tipo": "pergunta",
+      "texto": "Um morador ligou perguntando se pode agendar consulta pelo grupo da família. Vamos orientar o canal certo e rir depois, porque o grupo já tem 84 mensagens.",
+      "opcoes": [
+        {"texto": "Vou informar o canal oficial de agendamento.", "resposta": "Boa. Evita mensagem perdida e protege a privacidade. O grupo da família não é prontuário."},
+        {"texto": "E se ele mandar áudio de 7 minutos?", "resposta": "Aí você respira, ouve com paciência e responde no canal certo. Áudio de 7 minutos é uma forma de demanda."}
+      ]
+    }
+  ],
+  "recepcao": [
+    {
+      "id": "rec_caneta",
+      "tipo": "fala",
+      "texto": "Tem um paciente batendo a caneta na recepção há cinco minutos. Se continuar, vamos precisar de um plano de paz e uma caneta nova.",
+      "opcoes": [
+        {"texto": "Vou conversar e ver o que ele precisa.", "resposta": "Isso. Às vezes a caneta é só o megafone da ansiedade. Escute e oriente sobre o tempo de espera."},
+        {"texto": "Posso esconder a caneta?", "resposta": "Pode, mas ele vai achar outra. Melhor resolver a causa: informação e acolhimento."}
+      ]
+    },
+    {
+      "id": "rec_cafe",
+      "tipo": "fala",
+      "texto": "A copa mandou avisar que o café acabou. A recepção respondeu que a paciência também. Precisamos repor os dois.",
+      "opcoes": [
+        {"texto": "Vou ver o café e organizar a fila.", "resposta": "Obrigado. Café e informação são infraestrutura. Sem os dois, a recepção vira uma novela."},
+        {"texto": "Paciência tem receita?", "resposta": "Tem: escuta, fluxo claro e uma cadeira confortável. O café é o tempero."}
+      ]
+    },
+    {
+      "id": "rec_cadeira",
+      "tipo": "fala",
+      "texto": "Um paciente sentou na cadeira da recepção e agora atende melhor que nós. Ele já chamou três pessoas e deu orientação de graça.",
+      "opcoes": [
+        {"texto": "Vou retomar o posto com gentileza.", "resposta": "Isso. Agradeça a ajuda e explique que o atendimento precisa seguir o fluxo. Ele pode ser voluntário, não recepcionista."},
+        {"texto": "Ele tem crachá?", "resposta": "Não. Mas tem carisma. Se ele pedir salário, diga que o pagamento é em café e gratidão."}
+      ]
+    },
+    {
+      "id": "rec_telefone",
+      "tipo": "pergunta",
+      "texto": "A linha 2 está tocando desde o almoço. Atender é uma boa ideia; dançar conforme a música não resolve, apesar de ser divertido.",
+      "opcoes": [
+        {"texto": "Vou atender e registrar o recado.", "resposta": "Ótimo. Cada ligação pode ser uma demanda importante. Anote nome, contato e assunto."},
+        {"texto": "E se for trote?", "resposta": "Atenda com educação, identifique-se e encerre se necessário. Trote não precisa de plateia."}
+      ]
+    },
+    {
+      "id": "rec_idoso",
+      "tipo": "fala",
+      "texto": "Seu Juca esqueceu o nome da neta, mas lembrou do número da senha. Ajude a fazer a ficha com calma e sem pressa.",
+      "opcoes": [
+        {"texto": "Vou acolher e confirmar os dados com ele.", "resposta": "Isso. Confirme com calma, sem constrangimento. Às vezes a memória falha, mas a dignidade fica."},
+        {"texto": "A neta pode ser o contato?", "resposta": "Pode e deve, se ele autorizar. Apoio familiar ajuda no cuidado."}
+      ]
+    },
+    {
+      "id": "rec_cachorro",
+      "tipo": "fala",
+      "texto": "Um cachorro entrou no saguão e sentou na fila. Ele não tem Cartão SUS, mas parece muito disciplinado. Peça ao tutor para aguardar do lado de fora.",
+      "opcoes": [
+        {"texto": "Vou orientar o tutor com gentileza.", "resposta": "Obrigado. Animais não entram na área assistencial, exceto cão-guia. O cachorro pode esperar do lado de fora, com água."},
+        {"texto": "Ele pode ser atendido como acompanhante?", "resposta": "Só se for cão-guia. Caso contrário, ele fica no aguardo externo. A fila já tem latidos suficientes."}
+      ]
+    },
+    {
+      "id": "rec_agenda",
+      "tipo": "pergunta",
+      "texto": "A agenda da médica está cheia. Se alguém perguntar, ofereça alternativas com jeitinho e não diga que 'o sistema comeu' a consulta.",
+      "opcoes": [
+        {"texto": "Vou verificar as vagas e orientar.", "resposta": "Perfeito. Transparência e alternativa concreta acalmam mais que desculpa. E o sistema não come nada, ele só se esconde."},
+        {"texto": "E se eu disser que o poodle comeu?", "resposta": "Aí vira lenda urbana. Melhor assumir a agenda cheia e oferecer encaixe ou outro dia."}
+      ]
+    }
+  ],
+  "acs": [
+    {
+      "id": "acs_poodle",
+      "tipo": "fala",
+      "texto": "O poodle neo-punk-rock apareceu de novo. Está de moicano, rosnou para a lixeira e roubou meu crachá. Se encontrar, não faça carinho sem contrato.",
+      "opcoes": [
+        {"texto": "Vou avisar a equipe e o tutor.", "resposta": "Boa. O tutor diz que ele é dócil, mas o crachá não voltou. Peça para manter o portão fechado."},
+        {"texto": "Ele já tem cadastro no território?", "resposta": "Só informal. Se ele continuar roubando crachá, vou cadastrar como agente comunitário canino."}
+      ]
+    },
+    {
+      "id": "acs_capivaras",
+      "tipo": "fala",
+      "texto": "As capivaras estão invadindo as casas da rua 12. A vizinha tentou negociar e ofereceu manga, mas elas querem mesmo é o Wi-Fi.",
+      "opcoes": [
+        {"texto": "Vou orientar os moradores a não alimentar.", "resposta": "Isso. Capivara não é bicho de estimação. Aproxime-se com cuidado e acione a vigilância se houver risco."},
+        {"texto": "Posso deixar o roteador para elas?", "resposta": "Não. Sem Wi-Fi, a equipe não trabalha. As capivaras que usem o celular delas."}
+      ]
+    },
+    {
+      "id": "acs_agua",
+      "tipo": "fala",
+      "texto": "Dona Lourdes guarda água em 14 baldes porque 'vai faltar'. Vou levar a visita e explicar sobre dengue sem tirar os baldes dela.",
+      "opcoes": [
+        {"texto": "Vou orientar a manter os baldes tampados.", "resposta": "Perfeito. Respeite a necessidade dela e explique o risco. Água parada e descoberta é berçário de mosquito."},
+        {"texto": "E se ela guardar água no poodle?", "resposta": "Aí é caso de criatividade e de denúncia. Mas comece pelos baldes."}
+      ]
+    },
+    {
+      "id": "acs_vacina",
+      "tipo": "fala",
+      "texto": "O pessoal da rua do campo acha que vacina é coisa de criança. Levo a caderneta e um bolo de fubá; a conversa começa melhor.",
+      "opcoes": [
+        {"texto": "Vou levar informação e escutar as dúvidas.", "resposta": "Isso. Vacina é para todas as idades e o vínculo abre porta. O bolo ajuda, mas a informação é o recheio."},
+        {"texto": "O bolo é a vacina?", "resposta": "Não, mas é um ótimo acompanhamento. Cuidado com a farinha e com as fake news."}
+      ]
+    },
+    {
+      "id": "acs_remedio",
+      "tipo": "fala",
+      "texto": "Seu Ademir tomou o remédio do cachorro por engano. Ele está bem, mas o cachorro está se sentindo muito relaxado.",
+      "opcoes": [
+        {"texto": "Vou orientar e encaminhar para avaliação.", "resposta": "Isso. Mesmo que esteja bem, precisa de avaliação. E os remédios devem ficar longe dos animais e das crianças."},
+        {"texto": "O cachorro precisa de receita?", "resposta": "Precisa de veterinário. O Ademir precisa de médico. E a gente precisa de uma caixa organizada."}
+      ]
+    },
+    {
+      "id": "acs_gestante",
+      "tipo": "pergunta",
+      "texto": "A gestante da rua 5 precisa de visita. O marido disse que ela está 'de boa', mas 'de boa' ali significa pressão 15 por 9 e um chá de boldo.",
+      "opcoes": [
+        {"texto": "Vou visitar e verificar o pré-natal.", "resposta": "Perfeito. Não aceite 'de boa' como exame. Pressão alta na gestação é sério, e chá não substitui avaliação."},
+        {"texto": "O boldo tem CRM?", "resposta": "Não. E não resolve pressão alta. Leve a gestante ao atendimento e converse com a família."}
+      ]
+    },
+    {
+      "id": "acs_idoso",
+      "tipo": "fala",
+      "texto": "Seu Agenor caiu da caixa d'água empinando pipa. A médica quer falar com a família. Ele está bem, mas a pipa foi para o SUS como doação.",
+      "opcoes": [
+        {"texto": "Vou contatar a família e acompanhar.", "resposta": "Obrigada. Queda em idoso pode ter consequência depois. Converse sobre adaptações e prevenção."},
+        {"texto": "A pipa está internada?", "resposta": "Está em observação no telhado. O Agenor está melhor que ela. Priorize a família."}
+      ]
+    },
+    {
+      "id": "acs_familia",
+      "tipo": "fala",
+      "texto": "Uma família nova chegou com 6 crianças e um gato. Vou orientar sobre vacinação e higiene; o gato já está com a patinha lavada, então um de nós está no caminho.",
+      "opcoes": [
+        {"texto": "Vou atualizar o cadastro e as vacinas.", "resposta": "Isso. Acolha a família sem julgamento e verifique acesso à água, escola e saúde. O gato fica de fora do cadastro."},
+        {"texto": "O gato pode ser o responsável?", "resposta": "Não. Ele é fofo, mas não assina termo. Cadastre um adulto responsável."}
+      ]
+    },
+    {
+      "id": "acs_poste",
+      "tipo": "fala",
+      "texto": "Encontrei um morador conversando com o poste. Pode ser solidão, pode ser sofrimento psíquico. Acolher é diferente de 'dar um conselho'.",
+      "opcoes": [
+        {"texto": "Vou escutar e oferecer apoio da equipe.", "resposta": "Isso. Escuta sem julgamento e encaminhamento quando necessário. Solidão também é questão de saúde."},
+        {"texto": "O poste respondeu?", "resposta": "Não, e isso já é um bom sinal. Mas a solidão dele merece atenção de gente de verdade."}
+      ]
+    },
+    {
+      "id": "acs_territorio",
+      "tipo": "fala",
+      "texto": "O mapa do território está desatualizado: a rua que era do campo agora tem prédio, bicicleta elétrica e uma capivara síndica. Preciso refazer o cadastro.",
+      "opcoes": [
+        {"texto": "Vou atualizar o mapa e as visitas.", "resposta": "Ótimo. Território vivo muda sempre. O mapa precisa acompanhar as pessoas, não o contrário."},
+        {"texto": "A capivara síndica cobra condomínio?", "resposta": "Cobra em manga e acesso ao Wi-Fi. Mas não entra no cadastro do SUS."}
+      ]
+    }
+  ],
+  "vacina": [
+    {
+      "id": "vacina_atraso",
+      "tipo": "fala",
+      "texto": "A vacina atrasou por causa da estrada. O pessoal da fila está cantando. Se continuar, vamos precisar de um maestro.",
+      "opcoes": [
+        {"texto": "Vou informar a todos com transparência.", "resposta": "Isso. Atraso acontece; silêncio é que piora. Explique o motivo e o tempo estimado."},
+        {"texto": "Posso sugerir um repertório?", "resposta": "Pode, mas evite música de espera. A fila já está nostálgica demais."}
+      ]
+    },
+    {
+      "id": "vacina_bandaid",
+      "tipo": "fala",
+      "texto": "Uma criança pediu o band-aid antes da vacina. Explique que o band-aid é desculpa, não anestesia. Ela vai ficar bem.",
+      "opcoes": [
+        {"texto": "Vou acolher e explicar com carinho.", "resposta": "Perfeito. Explique o passo a passo, deixe ela escolher o braço e não minta sobre a picada. Confiança é vacina também."},
+        {"texto": "O band-aid pode ser colorido?", "resposta": "Pode e deve. Um band-aid de dinossauro melhora a imunidade emocional."}
+      ]
+    },
+    {
+      "id": "vacina_geladeira",
+      "tipo": "fala",
+      "texto": "A geladeira das vacinas apitou de madrugada. Verifiquei tudo: está estável. O susto foi de nível 10, o café foi de nível 12.",
+      "opcoes": [
+        {"texto": "Vou conferir a temperatura e registrar.", "resposta": "Ótimo. Registro e monitoramento salvam doses. E o café salva a equipe."},
+        {"texto": "A geladeira pediu música?", "resposta": "Pediu silêncio e uma porta fechada. Vacina não gosta de calor nem de funk alto."}
+      ]
+    },
+    {
+      "id": "vacina_tudo",
+      "tipo": "pergunta",
+      "texto": "Um adulto pediu 'a vacina de tudo'. Explique que existe calendário, não combo de restaurante. E que cobre é melhor no sanduíche.",
+      "opcoes": [
+        {"texto": "Vou conferir a caderneta e orientar.", "resposta": "Isso. Cada vacina tem indicação e intervalo. O calendário é personalizado, não um buffet."},
+        {"texto": "Ele quer um combo com batata?", "resposta": "Só se a batata for assada e a vacina estiver na temperatura certa. Melhor ficar no calendário."}
+      ]
+    },
+    {
+      "id": "vacina_carteira",
+      "tipo": "fala",
+      "texto": "A carteira de vacinação chegou molhada. Os dados ainda estão legíveis. Vamos atualizar e guardar em local seco, longe da piscina.",
+      "opcoes": [
+        {"texto": "Vou secar e transcrever os dados.", "resposta": "Boa. Se estiver ilegível, oriente a buscar o histórico no serviço. Não invente dose."},
+        {"texto": "Ela caiu na piscina?", "resposta": "Caiu, mas sobreviveu. A carteira é resistente; a paciência da mãe também."}
+      ]
+    },
+    {
+      "id": "vacina_busca",
+      "tipo": "fala",
+      "texto": "A busca ativa está funcionando: 3 crianças atrasadas apareceram. A mãe disse que veio pelo pão de queijo. A gente aceita qualquer motivação.",
+      "opcoes": [
+        {"texto": "Vou registrar e atualizar as doses.", "resposta": "Perfeito. O importante é proteger. E o pão de queijo é um excelente agente comunitário."},
+        {"texto": "O pão de queijo é vacina?", "resposta": "Não, mas melhora o comparecimento. Só não pode substituir a dose."}
+      ]
+    }
+  ],
+  "procedimentos": [
+    {
+      "id": "proc_curativo",
+      "tipo": "fala",
+      "texto": "O curativo do Seu Bento saiu no banho. Ele tentou resolver com fita isolante. Explique que fita isolante não é cobertura estéril, mesmo com carinho.",
+      "opcoes": [
+        {"texto": "Vou orientar e refazer o curativo.", "resposta": "Isso. Explique a troca, mantenha a assepsia e diga para não improvisar. Fita isolante é para fio, não para pele."},
+        {"texto": "Ele é eletricista?", "resposta": "É aposentado, mas tem alma de eletricista. Use gaze, não fita."}
+      ]
+    },
+    {
+      "id": "proc_luva",
+      "tipo": "pergunta",
+      "texto": "Faltou luva na sala. A última caixa agora guarda um par de meias, um botão e um bilhete escrito 'depois eu vejo'. Precisamos repor.",
+      "opcoes": [
+        {"texto": "Vou verificar o estoque e repor.", "resposta": "Obrigado. Material de proteção não pode faltar. E 'depois eu vejo' não é um sistema de gestão."},
+        {"texto": "As meias são EPI?", "resposta": "Não. Meia não substitui luva, mesmo em dia frio. Reponha o estoque e mantenha a sala segura."}
+      ]
+    },
+    {
+      "id": "proc_autoclave",
+      "tipo": "fala",
+      "texto": "A autoclave está trabalhando mais que a equipe. Se ela pifar, o dia vira um episódio de série. Confira o ciclo antes de abrir.",
+      "opcoes": [
+        {"texto": "Vou conferir o ciclo e registrar.", "resposta": "Perfeito. Esterilização é segurança. Registro e validade dos ciclos evitam susto e retrabalho."},
+        {"texto": "A autoclave tem plano de saúde?", "resposta": "Tem manutenção preventiva. É quase a mesma coisa, mas com menos burocracia."}
+      ]
+    },
+    {
+      "id": "proc_bolo",
+      "tipo": "fala",
+      "texto": "Uma senhora veio fazer um curativo e trouxe um bolo. A prioridade é o curativo, mas a política aqui é não recusar bolo. Só não deixe cair em cima da gaze.",
+      "opcoes": [
+        {"texto": "Vou agradecer e manter a assepsia.", "resposta": "Isso. Carinho à parte, gaze estéril não combina com açúcar. Guarde o bolo para depois."},
+        {"texto": "O bolo pode ser esterilizado?", "resposta": "Não. E perderia a graça. Coma depois, com as mãos limpas."}
+      ]
+    },
+    {
+      "id": "proc_pressao",
+      "tipo": "fala",
+      "texto": "Um paciente chegou para procedimento com a pressão alta. Não é só nervosismo. Avise a médica e acolha antes de qualquer agulha.",
+      "opcoes": [
+        {"texto": "Vou verificar os sinais e avisar a médica.", "resposta": "Ótimo. Segurança primeiro. Procedimento eletivo pode esperar avaliação; pressão alta sintomática não."},
+        {"texto": "Posso dar um chá de camomila?", "resposta": "Pode oferecer água e acolhimento, mas não substitua avaliação. Pressão alta não se resolve só com chá."}
+      ]
+    },
+    {
+      "id": "proc_residuos",
+      "tipo": "fala",
+      "texto": "O lixo infectante foi colocado no saco comum. Precisamos corrigir e explicar o descarte. O poodle neo-punk-rock já recusou a inspeção.",
+      "opcoes": [
+        {"texto": "Vou corrigir o descarte com segurança.", "resposta": "Isso. Resíduo infectante tem fluxo próprio. Corrija com EPI e oriente a equipe. O poodle agradece."},
+        {"texto": "O poodle recusou por ética?", "resposta": "Por faro e bom senso. Resíduo não se mistura, nem no saco nem na história."}
+      ]
+    }
+  ],
+  "equipe": [
+    {
+      "id": "equipe_copo",
+      "tipo": "fala",
+      "texto": "Alguém deixou um copo com café na mesa dos prontuários. Os prontuários já têm café suficiente no histórico.",
+      "opcoes": [
+        {"texto": "Vou organizar e limpar a mesa.", "resposta": "Obrigado. Prontuário não é porta-copo. E café derramado vira um evento clínico."},
+        {"texto": "O café é testemunha?", "resposta": "É réu confesso. Retire o copo e preserve os documentos."}
+      ]
+    },
+    {
+      "id": "equipe_net",
+      "tipo": "fala",
+      "texto": "A internet caiu. O sistema voltou. A fé da equipe foi testada e aprovada. O roteador, não.",
+      "opcoes": [
+        {"texto": "Vou registrar a instabilidade e avisar.", "resposta": "Isso. Registro ajuda a cobrar melhoria. E avise a recepção para anotar atendimentos manuais se precisar."},
+        {"texto": "Posso reiniciar o roteador?", "resposta": "Pode, mas reze antes. Se não voltar, chame a informática e não bata no aparelho."}
+      ]
+    },
+    {
+      "id": "equipe_fluxo",
+      "tipo": "pergunta",
+      "texto": "Você sabe a diferença entre recepção e acolhimento? Recepção é onde a pessoa chega; acolhimento é como ela é recebida.",
+      "opcoes": [
+        {"texto": "Vou tratar cada chegada com escuta.", "resposta": "Perfeito. O SUS começa no acolhimento. Uma senha não resume uma pessoa."},
+        {"texto": "E o café entra em qual?", "resposta": "No acolhimento emocional da equipe. Mas primeiro, escuta e fluxo."}
+      ]
+    },
+    {
+      "id": "equipe_territorio",
+      "tipo": "fala",
+      "texto": "O território é vivo: nasce rua, muda casa, aparece comércio, some árvore. Nosso mapa também precisa respirar.",
+      "opcoes": [
+        {"texto": "Vou atualizar as visitas e o cadastro.", "resposta": "Isso. Conhecer o território é cuidar antes de adoecer. E facilita achar o poodle."},
+        {"texto": "O mapa tem cheiro?", "resposta": "Tem cheiro de chuva, pastel e capivara. Mas o importante é que ele mostre as pessoas."}
+      ]
+    },
+    {
+      "id": "equipe_capivara_pipa",
+      "tipo": "fala",
+      "texto": "Hoje o resumo do dia é: capivara na rua, poodle no guichê, pipa na caixa d'água e café acabado. E ainda é terça-feira.",
+      "opcoes": [
+        {"texto": "Vou priorizar o que é saúde e segurança.", "resposta": "Ótimo. No meio do absurdo, o cuidado continua: acolher, escutar, encaminhar e proteger."},
+        {"texto": "E o café, entra na prioridade?", "resposta": "Entra no apoio emocional. Mas primeiro, saúde e segurança. Depois, café."}
+      ]
+    }
+  ],
+  "paciente": [
+    {
+      "id": "paciente_arvore_azul",
+      "tipo": "pergunta",
+      "texto": "Se uma árvore pega fogo com a chama azul, o que eu faço? Ela não é minha, mas fica na calçada em frente de casa.",
+      "opcoes": [
+        {"texto": "Precisa marcar uma consulta para ela. Tem cadastro?", "resposta": "Acho que árvore não tem cadastro. Mas ela parece precisar de alguém que entenda de fogo. Vou perguntar na vizinhança e não deixar chegar perto da fiação."},
+        {"texto": "Árvores deve ser com a Zoonoses, Arvonozes, eu não tenho certeza. Posso ver sua carteira de vacinas?", "resposta": "Pode ser. Eu também não tenho certeza. Só queria não deixar o fogo se espalhar. Vou procurar os bombeiros e avisar o pessoal da rua."}
+      ]
+    },
+    {
+      "id": "paciente_capivara_sus",
+      "tipo": "pergunta",
+      "texto": "Uma capivara entrou na minha casa e sentou no sofá pedindo Cartão SUS. Ela tem direito?",
+      "opcoes": [
+        {"texto": "Vou chamar alguém da vigilância e ver se ela está bem.", "resposta": "Obrigada. Ela parece saudável, mas está ocupando o controle remoto. Melhor alguém que entenda de animais e de cadastro."},
+        {"texto": "Se ela tem CPF, já é um começo.", "resposta": "Ela não tem CPF, mas tem uma expressão de quem paga imposto. Eu só queria o sofá de volta."}
+      ]
+    },
+    {
+      "id": "paciente_poodle_punk",
+      "tipo": "pergunta",
+      "texto": "O poodle do vizinho virou neo-punk-rock e late em inglês. Isso é caso de vacina ou de show?",
+      "opcoes": [
+        {"texto": "Vou conferir a carteira de vacinação dele.", "resposta": "A carteira está em dia, mas o repertório é político. Ele mordeu o jornal e exigiu um palco."},
+        {"texto": "Talvez ele só precise de um público.", "resposta": "Também acho. Mas se ele começar a fazer turnê na rua, avisa a Vigilância Sanitária."}
+      ]
+    },
+    {
+      "id": "paciente_idoso_pipa",
+      "tipo": "fala",
+      "texto": "Meu avô caiu da caixa d'água empinando pipa. Ele diz que está bem, mas o joelho está doendo.",
+      "opcoes": [
+        {"texto": "Vou chamar a enfermeira e a gente avalia com calma.", "resposta": "Obrigado. Ele já está sentado, mas não quer largar a linha. Se precisar, eu seguro a pipa."},
+        {"texto": "Ele consegue contar quantos dedos estou mostrando?", "resposta": "Ele consegue, mas está discutindo com a pipa. Acho melhor alguém da saúde dar uma olhada."}
+      ]
+    },
+    {
+      "id": "paciente_implanon_cachorro",
+      "tipo": "pergunta",
+      "texto": "Ouvi dizer que Implanon é aquele remédio que coloca no cachorro para ele não latir. Serve para mim também?",
+      "opcoes": [
+        {"texto": "Vou te encaminhar para a enfermeira explicar direitinho.", "resposta": "Ótimo. Eu só não queria que o cachorro ganhasse um método antes de mim. Mas se for diferente, melhor conversar."},
+        {"texto": "Acho que cachorro e gente usam coisas diferentes.", "resposta": "Também acho. Ele já tem coleira, vacina e um plano de saúde. Vou perguntar na recepção."}
+      ]
+    },
+    {
+      "id": "paciente_peito_vergonha",
+      "tipo": "fala",
+      "texto": "Meu irmão está com uma dor no peito, mas tem vergonha de falar. Ele acha que é só gases.",
+      "opcoes": [
+        {"texto": "Vou chamar a enfermeira agora; dor no peito merece avaliação.", "resposta": "Obrigado. Vou falar com ele. Ele já está suando e ficou mais quieto, isso me preocupou."},
+        {"texto": "Posso conversar com ele, sem julgar.", "resposta": "Ajuda muito. Ele não gosta de parecer fraco. Se você puder chamar alguém da equipe, eu fico com ele."}
+      ]
+    },
+    {
+      "id": "paciente_sabonete_limao",
+      "tipo": "fala",
+      "texto": "Meu filho trocou o sabonete por limão porque achou que ia ficar com cheiro de limonada. Agora a pele está ardendo.",
+      "opcoes": [
+        {"texto": "Vou chamar a enfermeira para orientar e lavar com calma.", "resposta": "Obrigado. Ele está chorando, mas já aprendeu que limonada é na cozinha."},
+        {"texto": "Dá para perguntar a ele por que escolheu o limão?", "resposta": "Ele disse que queria ser fruta. Acho que precisa de alguém que explique melhor a diferença entre pele e suco."}
+      ]
+    },
+    {
+      "id": "paciente_mau_olhado",
+      "tipo": "pergunta",
+      "texto": "Queria uma vacina contra mau-olhado. A vizinha olhou meu cabelo e ele caiu.",
+      "opcoes": [
+        {"texto": "Vou ver com a equipe o que existe para cuidar da queda de cabelo.", "resposta": "Então tem vacina? Eu só queria uma proteção extra. A vizinha tem um olhar muito forte."},
+        {"texto": "Mau-olhado não é vacina, mas posso ouvir essa história.", "resposta": "Obrigada. Talvez eu só precise de uma conversa e de um chapéu. Mas se tiver algo para o cabelo, eu aceito."}
+      ]
+    },
+    {
+      "id": "paciente_dedo_churrasco",
+      "tipo": "fala",
+      "texto": "Cortei o dedo abrindo a embalagem de carvão. Lavei com cerveja e coloquei fita isolante. Está bom?",
+      "opcoes": [
+        {"texto": "Vou chamar alguém para limpar e avaliar esse dedo.", "resposta": "Pode ser. Eu só não queria perder o churrasco. Mas o dedo está começando a pulsar."},
+        {"texto": "Fita isolante não combina muito com curativo.", "resposta": "Também achei. O carvão ficou pronto, mas o dedo não. Vou aceitar ajuda."}
+      ]
+    },
+    {
+      "id": "paciente_camisinha_adesivo",
+      "tipo": "fala",
+      "texto": "Meu sobrinho achou que camisinha era adesivo e colou no caderno. Ele quer saber se ainda serve.",
+      "opcoes": [
+        {"texto": "Vou pedir para a equipe explicar o uso correto.", "resposta": "Obrigado. Ele é adolescente e riu de tudo, mas acho que precisa ouvir com respeito."},
+        {"texto": "Se colou no caderno, o caderno está protegido.", "resposta": "Foi o que ele disse. O caderno está ótimo; a conversa ainda precisa acontecer."}
+      ]
+    },
+    {
+      "id": "paciente_sangue_virado",
+      "tipo": "fala",
+      "texto": "Minha vizinha falou que meu sangue virou. Queria um exame para desvirar.",
+      "opcoes": [
+        {"texto": "Vou ver com a equipe que exames fazem sentido.", "resposta": "Obrigada. Eu só queria entender o que está acontecendo, sem fazer exame só porque falaram."},
+        {"texto": "Sangue não vira, mas a gente pode conversar sobre o que você sente.", "resposta": "Acho que é isso. Ando cansada, mas nem sei explicar direito. Obrigada por escutar."}
+      ]
+    },
+    {
+      "id": "paciente_cafe_exame",
+      "tipo": "pergunta",
+      "texto": "Posso tomar café antes do exame de sangue? Já tomei três e comi um pão com mortadela.",
+      "opcoes": [
+        {"texto": "Vou confirmar com a equipe qual é a orientação para o seu exame.", "resposta": "Obrigado. Eu só não queria perder a viagem. O café foi mais forte que eu."},
+        {"texto": "Acho que o café já foi para a reunião.", "resposta": "Ele foi. E levou o pão junto. Se precisar remarcar, eu volto."}
+      ]
+    },
+    {
+      "id": "paciente_fila_forro",
+      "tipo": "fala",
+      "texto": "A fila está grande, mas descobri que o senhor da frente foi músico de forró. Agora todo mundo quer tocar triângulo.",
+      "opcoes": [
+        {"texto": "Vou manter a calma e lembrar que a espera também é cuidado.", "resposta": "É verdade. A fila ficou mais leve. Só o triângulo está um pouco ansioso."},
+        {"texto": "Posso pedir uma música enquanto esperamos?", "resposta": "Pode, mas baixinho. O posto é lugar de acolher, não de virar trio elétrico."}
+      ]
+    }
+  ],
+  "animal": [
+    {
+      "id": "animal_capivara_rio",
+      "tipo": "fala",
+      "texto": "Nasci na beira do rio. Quando a água subiu, minha casa virou ponto de encontro de todo mundo, inclusive de uma família de carrapatos.",
+      "opcoes": [
+        {"texto": "Vou ver com a equipe como fica a sua situação e a da sua casa.", "resposta": "Obrigada. Eu só queria um lugar seco e alguém que não tratasse bicho como bicho de outro planeta."},
+        {"texto": "Capivara não alaga, capivara muda de endereço.", "resposta": "É o que eu digo. Só não me pede para carregar o sofá de novo."}
+      ]
+    },
+    {
+      "id": "animal_poodle_punk",
+      "tipo": "fala",
+      "texto": "Meu poodle tem moicano roxo e latido em quatro por quatro. Ele acha que a sala de espera é um show.",
+      "opcoes": [
+        {"texto": "Vou pedir para ele fazer um som mais baixo e respeitar a espera.", "resposta": "Combinado. Ele é punk, mas é educado. Só não gosta de ser chamado de fofinho."},
+        {"texto": "Se ele começar a banda, avisa que eu quero ver o ensaio.", "resposta": "Aviso. Mas o cachorro cobra ingresso em petisco e não devolve troco."}
+      ]
+    },
+    {
+      "id": "animal_gato_segunda",
+      "tipo": "pergunta",
+      "texto": "Você acha que alergia a segunda-feira entra no prontuário? Eu espirro só quando chega o dia.",
+      "opcoes": [
+        {"texto": "Vou conversar com a equipe sobre os seus sintomas de verdade.", "resposta": "Bom. Se não for segunda-feira, pelo menos eu ganho um anti-histamínico e um cochilo."},
+        {"texto": "Segunda-feira é um alérgeno do serviço público.", "resposta": "Então eu preciso de atestado até terça. É brincadeira. Ou quase."}
+      ]
+    },
+    {
+      "id": "animal_tucano_mascara",
+      "tipo": "fala",
+      "texto": "Meu bico não cabe na máscara. A moça da triagem mandou eu usar duas, mas agora pareço um tucano de aviação.",
+      "opcoes": [
+        {"texto": "Vou ver com a equipe uma proteção que sirva no seu bico sem tirar a sua dignidade.", "resposta": "Obrigado. Eu só não queria escolher entre respirar e parecer um avião."},
+        {"texto": "A máscara serve para cuidar dos outros, não para caber.", "resposta": "Concordo. Só queria que ela não ficasse pendurada na minha orelha como uma rede de dormir."}
+      ]
+    },
+    {
+      "id": "animal_coruja_sono",
+      "tipo": "fala",
+      "texto": "Durmo de dia, trabalho de noite e a fila me acorda justo quando eu sonho que estou de férias.",
+      "opcoes": [
+        {"texto": "Vou anotar que o seu descanso também precisa ser respeitado.", "resposta": "Obrigada. A pessoa que me entende não precisa concordar com a minha rotina, só não rir dela."},
+        {"texto": "Sonhar com férias é um sintoma de posto cheio.", "resposta": "Então o posto inteiro está contaminado. Cuida para não pegar."}
+      ]
+    },
+    {
+      "id": "animal_sapo_pele",
+      "tipo": "pergunta",
+      "texto": "Minha pele fica seca quando eu espero muito. Vocês têm um bebedouro ou eu volto para o lago?",
+      "opcoes": [
+        {"texto": "Vou mostrar o bebedouro e ver se a espera pode ser menor.", "resposta": "Obrigado. Não preciso de lago, só de água e de alguém que não me chame de nojento."},
+        {"texto": "O lago fica depois da recepção, na porta da fantasia.", "resposta": "Então me traz uma toalha. Brincadeira. Mas água de verdade ajuda mesmo."}
+      ]
+    },
+    {
+      "id": "animal_coelho_filhos",
+      "tipo": "fala",
+      "texto": "Tenho trinta e seis filhos e todos têm carteirinha de vacina. O problema é que a carteirinha do mais novo já está maior que ele.",
+      "opcoes": [
+        {"texto": "Vou ajudar a organizar as carteirinhas e ver quais vacinas faltam.", "resposta": "Obrigada. Em casa a gente divide tudo; no posto, a fila também pode ser dividida com carinho."},
+        {"texto": "Trinta e seis? A senhora precisa de uma gaveta, não de uma carteirinha.", "resposta": "A gaveta já tem. Agora falta um armário só para os aniversários."}
+      ]
+    },
+    {
+      "id": "animal_raposa_esperta",
+      "tipo": "pergunta",
+      "texto": "Todo mundo acha que raposa é esperta. Você acha que eu preciso saber tudo sobre a minha saúde sozinha?",
+      "opcoes": [
+        {"texto": "Não. A gente pode descobrir junto, sem prova e sem pegadinha.", "resposta": "Que alívio. Eu já estava cansada de ser a raposa que sabe o resultado antes da consulta."},
+        {"texto": "Esperteza é pedir ajuda antes de virar lenda.", "resposta": "Boa. Vou usar essa frase no próximo churrasco da família, com os devidos créditos."}
+      ]
+    },
+    {
+      "id": "animal_jacare_sorriso",
+      "tipo": "fala",
+      "texto": "Meu sorriso é largo por anatomia, não por ameaça. A moça da recepção se assustou e chamou a segurança.",
+      "opcoes": [
+        {"texto": "Vou conversar com a recepção para que atendam você sem susto.", "resposta": "Obrigado. Eu só queria uma senha, não um papel de vilão de novela."},
+        {"texto": "Da próxima vez avisa que o sorriso vem de fábrica.", "resposta": "Aviso. E se vier alguém com cara de mau, pergunta primeiro se é fome ou genética."}
+      ]
+    },
+    {
+      "id": "animal_urso_abraco",
+      "tipo": "fala",
+      "texto": "Abraço apertado é o meu jeito de demonstrar afeto. Na triagem, a técnica pediu para eu avisar antes.",
+      "opcoes": [
+        {"texto": "Vou avisar a equipe e combinar um jeito de acolher sem susto.", "resposta": "Combinado. Eu também posso aprender a cumprimentar sem apertar as pessoas como se fossem almofada."},
+        {"texto": "Avisa antes e deixa o abraço para depois da vacina.", "resposta": "Justo. Agulha primeiro, abraço depois. A ordem faz diferença."}
+      ]
+    }
+  ]
+}

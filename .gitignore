@@ -1,0 +1,43 @@
+# Segredos e credenciais: nunca versionar.
+*.pfx
+*.key
+*.p12
+*.jks
+*.keystore
+client_secret*.json
+google-client.json
+.env
+.env.*
+segredos.json
+
+# Builds, caches e artefatos gerados.
+build/
+android/
+.godot/
+*.tmp
+tmp/
+dist/
+node_modules/
+*.apk
+*.aab
+*.apks
+*.msix
+*.msixupload
+*.exe
+*.pck
+
+# Logs e dados de execução.
+*.log
+log.txt
+*.dat
+preferencias.json
+*.WebView2/
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Ferramentas locais e arquivos de IDE.
+.vscode/
+.idea/
+*.suo
+*.user

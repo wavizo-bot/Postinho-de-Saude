@@ -1,0 +1,64 @@
+{
+  "regras": {
+    "opcoes": "As opcoes sao montadas pelo jogo conforme o tipo de pessoa e a energia do jogador. Chefe, medica e enfermeira sempre recebem duas formas de aceitar. Os demais recebem aceitar/negar acima de 50% de energia ou aceitar com resignacao/negar por cansaço abaixo disso.",
+    "tempo_vida": "Funcionarios desistem da demanda com 1% de chance por segundo. A chefe nunca desiste. Pacientes mantem a demanda ate irem embora.",
+    "tarefas": "Quantidade minima e maxima de trabalhos pendentes gerados ao aceitar."
+  },
+  "chefe": [
+    {"id": "chefe_escala", "texto": "Preciso que você revise a escala de todo o posto ainda hoje.", "tarefas": [2, 3], "peso": 1.0},
+    {"id": "chefe_relatorio", "texto": "Quero um relatório completo dos atendimentos desta semana.", "tarefas": [2, 3], "peso": 1.0},
+    {"id": "chefe_dengue", "texto": "Organize uma campanha de combate à dengue nos bairros.", "tarefas": [2, 3], "peso": 1.0},
+    {"id": "chefe_idosos", "texto": "Prepare um evento de acolhimento para os idosos.", "tarefas": [1, 2], "peso": 1.0},
+    {"id": "chefe_visita", "texto": "Faça uma visita às famílias que faltaram às consultas.", "tarefas": [2, 3], "peso": 1.0},
+    {"id": "chefe_estoque", "texto": "Confira o estoque de vacinas e materiais antes de fechar o dia.", "tarefas": [1, 2], "peso": 1.0},
+    {"id": "chefe_reuniao", "texto": "Reserve a sala de reuniões e avise toda a equipe.", "tarefas": [1, 1], "peso": 1.0},
+    {"id": "chefe_pacientes", "texto": "Veja por que tantos pacientes estão indo embora sem atendimento.", "tarefas": [2, 3], "peso": 0.8}
+  ],
+  "medica": [
+    {"id": "medica_receita", "texto": "Leve esta receita até a casa da paciente, por favor.", "tarefas": [1, 2], "peso": 1.0},
+    {"id": "medica_exame", "texto": "Coloque este exame na fila de resultados com urgência.", "tarefas": [1, 2], "peso": 1.0},
+    {"id": "medica_endereco", "texto": "Descubra o novo endereço desta família para a visita domiciliar.", "tarefas": [1, 2], "peso": 1.0},
+    {"id": "medica_retorno", "texto": "Ligue para esta paciente e marque o retorno dela.", "tarefas": [1, 1], "peso": 1.0},
+    {"id": "medica_encaminhamento", "texto": "Leve este encaminhamento para a regulação.", "tarefas": [1, 2], "peso": 1.0},
+    {"id": "medica_historico", "texto": "Busque o histórico dessa criança no sistema antigo.", "tarefas": [2, 3], "peso": 0.9},
+    {"id": "medica_gestante", "texto": "Confirme se a gestante fez todos os exames do pré-natal.", "tarefas": [2, 2], "peso": 0.9}
+  ],
+  "enfermeira": [
+    {"id": "enf_vacina", "texto": "Preciso que você confira a carteira de vacinação desta criança.", "tarefas": [1, 2], "peso": 1.0},
+    {"id": "enf_gestante", "texto": "Chame esta gestante para a consulta de acompanhamento.", "tarefas": [1, 2], "peso": 1.0},
+    {"id": "enf_falta", "texto": "Investigue por que esta família faltou à consulta.", "tarefas": [1, 2], "peso": 1.0},
+    {"id": "enf_curativo", "texto": "Separe os materiais para os curativos de hoje.", "tarefas": [1, 2], "peso": 1.0},
+    {"id": "enf_procedimentos", "texto": "Confira se a sala de procedimentos está pronta.", "tarefas": [1, 1], "peso": 1.0},
+    {"id": "enf_hipertensos", "texto": "Atualize a lista de hipertensos que precisam de visita.", "tarefas": [2, 3], "peso": 0.9},
+    {"id": "enf_remedio", "texto": "Veja se a dona Alice já retirou os remédios dela.", "tarefas": [1, 1], "peso": 0.9}
+  ],
+  "funcionarios": [
+    {"id": "func_planilha", "texto": "Preciso que você atualize esta planilha de atendimentos.", "tarefas": [1, 2], "peso": 1.0},
+    {"id": "func_arquivo", "texto": "Procure o prontuário desta pessoa no arquivo.", "tarefas": [1, 2], "peso": 1.0},
+    {"id": "func_paciente", "texto": "Avise o paciente da sala de espera que chegou a vez dele.", "tarefas": [1, 1], "peso": 1.0},
+    {"id": "func_cafe", "texto": "Me ajuda a buscar mais café para a copa? É só ir lá e voltar.", "tarefas": [0, 0], "peso": 0.9, "sem_pc": true, "custo_energia": 0.18},
+    {"id": "func_impressora", "texto": "A impressora travou de novo. Você consegue resolver?", "tarefas": [1, 1], "peso": 1.0},
+    {"id": "func_agenda", "texto": "Confira os horários da agenda da médica.", "tarefas": [1, 2], "peso": 1.0},
+    {"id": "func_estoque", "texto": "Reponha as luvas e as seringas das salas.", "tarefas": [1, 2], "peso": 1.0},
+    {"id": "func_cadeira", "texto": "Organize as cadeiras do saguão, por favor. Não precisa abrir o sistema.", "tarefas": [0, 0], "peso": 0.8, "sem_pc": true, "custo_energia": 0.14},
+    {"id": "func_telefone", "texto": "Atenda esse telefonema enquanto eu termino aqui.", "tarefas": [1, 1], "peso": 0.8},
+    {"id": "func_visita", "texto": "Anote os dados desta família para a visita de amanhã.", "tarefas": [1, 2], "peso": 1.0},
+    {"id": "func_material", "texto": "Leve este material para a sala de vacina.", "tarefas": [1, 1], "peso": 0.9},
+    {"id": "func_limpeza", "texto": "Peça à equipe de limpeza para passar na recepção. Vai gastar sola de sapato, não teclado.", "tarefas": [0, 0], "peso": 0.7, "sem_pc": true, "custo_energia": 0.16},
+    {"id": "func_exame_waldo", "texto": "O exame da dona Zulmira sumiu no arquivo. Acha a pasta dela para mim?", "tarefas": [1, 1], "peso": 0.9, "tipo_tarefa": "exame"}
+  ],
+  "pacientes": [
+    {"id": "pac_exame", "texto": "Você pode verificar se o meu exame já chegou?", "tarefas": [1, 1], "peso": 1.0},
+    {"id": "pac_receita", "texto": "Estou sem meus remédios. Consegue renovar a receita?", "tarefas": [1, 2], "peso": 1.0},
+    {"id": "pac_endereco", "texto": "Meu endereço mudou. Pode atualizar no cadastro?", "tarefas": [1, 1], "peso": 1.0},
+    {"id": "pac_agenda", "texto": "Queria marcar uma consulta para a semana que vem.", "tarefas": [1, 1], "peso": 1.0},
+    {"id": "pac_crianca", "texto": "Meu filho não está se sentindo bem. Pode me orientar?", "tarefas": [1, 2], "peso": 1.0},
+    {"id": "pac_agua", "texto": "Tem como me trazer um copo de água, por favor?", "tarefas": [1, 1], "peso": 0.8},
+    {"id": "pac_banheiro", "texto": "Onde fica o banheiro? Estou esperando há bastante tempo.", "tarefas": [1, 1], "peso": 0.8},
+    {"id": "pac_reclamacao", "texto": "Estou esperando muito. Você pode ver o que está acontecendo?", "tarefas": [1, 2], "peso": 1.0},
+    {"id": "pac_docinho", "texto": "Trouxe um docinho para agradecer o carinho de vocês.", "tarefas": [1, 1], "peso": 0.6},
+    {"id": "pac_agradecimento", "texto": "Só queria agradecer por tudo o que fizeram por mim.", "tarefas": [1, 1], "peso": 0.6},
+    {"id": "pac_remarcar", "texto": "Preciso remarcar a consulta da minha mãe.", "tarefas": [1, 1], "peso": 1.0},
+    {"id": "pac_vacina", "texto": "Perdi minha carteira de vacinação. Como faço para tirar outra?", "tarefas": [1, 2], "peso": 1.0}
+  ]
+}

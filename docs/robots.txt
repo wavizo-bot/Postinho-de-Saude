@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /app/teste/
+Sitemap: https://wavizo-bot.github.io/Postinho-de-Saude/sitemap.xml

@@ -1,0 +1,97 @@
+{
+  "tela": {"largura": 1280, "altura": 720},
+  "mundo": {"largura": 1440, "altura": 900},
+  "construcao": {"x": 24, "y": 24, "w": 1392, "h": 852, "parede": 10},
+  "lobby": {"x": 520, "y": 34, "w": 872, "h": 832},
+  "salas": [
+    {
+      "id": "A", "nome": "Chefe", "tipo": "chefe", "x": 40, "y": 48, "w": 280, "h": 136,
+      "cor": "#e8dcc8", "porta": {"lado": "direita", "centro": 116, "largura": 48},
+      "cadeira": [100, 126], "funcionarios": 1,
+      "paciente_spots": [[270, 96], [270, 148]], "capacidade": 3, "movel": "chefe"
+    },
+    {
+      "id": "B", "nome": "Médica", "tipo": "medica", "x": 40, "y": 194, "w": 280, "h": 136,
+      "cor": "#dce6ee", "porta": {"lado": "direita", "centro": 262, "largura": 48},
+      "cadeira": [110, 296], "funcionarios": 1,
+      "paciente_spots": [[246, 248], [246, 294]], "capacidade": 3, "movel": "medica"
+    },
+    {
+      "id": "C", "nome": "Enfermeira", "tipo": "enfermeira", "x": 40, "y": 340, "w": 280, "h": 136,
+      "cor": "#dbeadd", "porta": {"lado": "direita", "centro": 408, "largura": 48},
+      "cadeira": [110, 442], "funcionarios": 1,
+      "paciente_spots": [[246, 394], [246, 440]], "capacidade": 3, "movel": "enfermeira"
+    },
+    {
+      "id": "D", "nome": "Vacina", "tipo": "vacina", "x": 40, "y": 486, "w": 280, "h": 164,
+      "cor": "#dff0e8", "porta": {"lado": "direita", "centro": 568, "largura": 48},
+      "cadeira": [104, 568], "cadeiras": [[104, 568], [104, 622]], "funcionarios": 2,
+      "paciente_spots": [[244, 568], [244, 622]], "capacidade": 3, "movel": "vacina"
+    },
+    {
+      "id": "F", "nome": "Procedimentos", "tipo": "procedimentos", "x": 40, "y": 660, "w": 280, "h": 192,
+      "cor": "#e6e0f0", "porta": {"lado": "direita", "centro": 756, "largura": 48},
+      "cadeira": [104, 734], "cadeiras": [[104, 734], [104, 802]], "funcionarios": 2,
+      "paciente_spots": [[244, 734], [244, 802]], "capacidade": 3, "movel": "procedimentos"
+    },
+    {
+      "id": "E", "nome": "Copa", "tipo": "copa", "x": 380, "y": 690, "w": 178, "h": 162,
+      "cor": "#f0e4cf", "porta": {"lado": "direita", "centro": 771, "largura": 54},
+      "cadeira": null, "funcionarios": 0, "paciente_spots": [], "capacidade": 5, "movel": "copa",
+      "cafe": [440, 760]
+    }
+  ],
+  "guiche": {
+    "x": 550, "y": 72, "w": 210, "h": 42,
+    "funcionario": [655, 50], "atendimento": [655, 146],
+    "fila": [[655, 146], [655, 188], [655, 230], [655, 272], [600, 146], [600, 188], [600, 230], [600, 272]]
+  },
+  "pcs": [
+    {"id": "int1", "tipo": "interno", "x": 656, "y": 364, "assento": [656, 426], "mesa": [600, 350, 112, 44]},
+    {"id": "int2", "tipo": "interno", "x": 656, "y": 504, "assento": [656, 566], "mesa": [600, 490, 112, 44]},
+    {"id": "int3", "tipo": "interno", "x": 656, "y": 644, "assento": [656, 706], "mesa": [600, 630, 112, 44]},
+    {"id": "rec1", "tipo": "recepcao", "x": 836, "y": 364, "assento": [836, 426], "mesa": [780, 350, 112, 44], "atendimento": [836, 292]},
+    {"id": "rec2", "tipo": "recepcao", "x": 836, "y": 504, "assento": [836, 566], "mesa": [780, 490, 112, 44], "atendimento": [836, 432]},
+    {"id": "rec3", "tipo": "recepcao", "x": 836, "y": 644, "assento": [836, 706], "mesa": [780, 630, 112, 44], "atendimento": [836, 572]},
+    {"id": "pcB", "tipo": "sala", "sala": "B", "x": 110, "y": 234, "assento": [110, 296], "mesa": [58, 220, 104, 38]},
+    {"id": "pcC", "tipo": "sala", "sala": "C", "x": 110, "y": 380, "assento": [110, 442], "mesa": [58, 366, 104, 38]},
+    {"id": "pcD", "tipo": "sala", "sala": "D", "x": 104, "y": 526, "assento": [104, 568], "mesa": [52, 512, 104, 38]},
+    {"id": "pcF", "tipo": "sala", "sala": "F", "x": 104, "y": 692, "assento": [104, 734], "mesa": [52, 678, 104, 38]}
+  ],
+  "cadeiras_grade": {
+    "x": 946, "y": 286, "cols": 9, "rows": 8, "dx": 50, "dy": 54,
+    "corredor_cols": [3, 6], "corredor_rows": [3, 6]
+  },
+  "em_pe": [
+    [900, 132], [902, 248], [900, 808], [1000, 812],
+    [1108, 812], [1216, 812], [1324, 812], [1372, 700],
+    [1372, 402], [1372, 516], [1372, 188], [1260, 188],
+    [744, 806], [600, 806]
+  ],
+  "entrada": {
+    "porta": [1320, 26], "spawn": [1320, 2], "dentro": [1320, 76],
+    "seta_saida": [1320, 154], "aviso_saida": "O trabalho externo sera introduzido em uma proxima versao."
+  },
+  "porta_lateral": {
+    "rect": [1406, 690, 18, 96], "seta": [1352, 738],
+    "aviso": "A outra parte do postinho ainda nao esta pronta e sera incluida em uma atualizacao futura."
+  },
+  "impressora": {"x": 856, "y": 96},
+  "jogador_inicio": [1160, 218],
+  "orientacoes": [
+    {"x": 526, "y": 42, "texto": "SAGUAO"},
+    {"x": 34, "y": 32, "texto": "SALAS DE ATENDIMENTO"}
+  ],
+  "decoracao": [
+    {"tipo": "planta", "x": 600, "y": 846},
+    {"tipo": "planta", "x": 1378, "y": 850},
+    {"tipo": "planta", "x": 1380, "y": 222},
+    {"tipo": "planta", "x": 924, "y": 846},
+    {"tipo": "bebedouro", "x": 904, "y": 190},
+    {"tipo": "quadro", "x": 962, "y": 66},
+    {"tipo": "quadro", "x": 1160, "y": 66},
+    {"tipo": "lixeira", "x": 920, "y": 252},
+    {"tipo": "lixeira", "x": 904, "y": 746},
+    {"tipo": "relogio", "x": 1260, "y": 68}
+  ]
+}

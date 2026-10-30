@@ -1,0 +1,75 @@
+{
+  "aparencia": {
+    "tons_pele": ["#EDC4B3", "#E6B8A2", "#DEAB90", "#D69F7E", "#CD9777", "#C38E70", "#B07D62", "#9D6B53", "#8A5A44", "#774936", "#F2D7C7", "#B98A6A"],
+    "cores_roupa": ["#e76f51", "#f4a261", "#e9c46a", "#2a9d8f", "#457b9d", "#9b5de5", "#f15bb5", "#00bbf9", "#90be6d", "#ff8fab", "#7f5539", "#b56576", "#e07a5f", "#81b29a"],
+    "cores_calca": ["#3d405b", "#264653", "#5f0f40", "#3a5a40", "#6c584c", "#1d3557", "#7f5539", "#495057", "#2b2d42", "#4a4e69"],
+    "cores_sapato": ["#2b2d42", "#e63946", "#f1faee", "#ffb703", "#6a4c93", "#2a9d8f", "#5c4033", "#22223b"],
+    "cores_cabelo": ["#2b1b17", "#4a2c2a", "#7b4b2a", "#a97542", "#d8b26e", "#bdbdbd", "#1c1c1c", "#6a3d9a", "#c97b4a", "#8d5524"],
+    "chapeus": ["nenhum", "nenhum", "nenhum", "bone", "touca", "chapeu_praia", "laco", "coroa", "capacete", "boina"],
+    "acessorios": ["nenhum", "nenhum", "nenhum", "oculos", "mascara", "bolsa", "cachecol"],
+    "estilos_cabelo": ["curto", "franja", "coque", "longo", "cacheado", "calvo", "curto", "franja"],
+    "especies_animais": ["capivara", "poodle", "gato", "coelho", "raposa", "urso", "coruja", "sapo", "tucano", "jacare"],
+    "pelos_animais": ["#c9a27e", "#8b5e3c", "#d9b48f", "#a9744f", "#e8d3b9", "#6b4b3a", "#c78f5e", "#f0e0c8", "#9aa7a0", "#b98a6a", "#8fa38b", "#d4a373"],
+    "nomes_femininos": ["Mara", "Helena", "Rosa", "Bia", "Nina", "Joana", "Lu", "Aline", "Cida", "Eva", "Gabi", "Iara", "Sônia", "Tereza", "Cléa", "Dora", "Fátima", "Lúcia", "Márcia", "Nara", "Olga", "Paula", "Rita", "Sueli", "Vera", "Zélia", "Bruna", "Camila", "Daniela", "Elisa", "Fernanda", "Glória", "Heloísa", "Inês", "Jandira", "Kátia"],
+    "nomes_masculinos": ["Caio", "Téo", "Rafa", "Bruno", "Davi", "Fábio", "Hugo", "João", "Marcos", "Nelson", "Otávio", "Pedro", "Rui", "Sérgio", "Tomás", "Ubaldo", "Vitor", "Wilson", "Zeca", "André", "Beto", "César", "Djalma", "Édson", "Felipe", "Geraldo", "Hélio", "Ítalo", "Jorge", "Léo"],
+    "nomes_neutros": ["Alex", "Cris", "Dani", "Eli", "Fran", "Gabi", "Jean", "Lê", "Mari", "Nico", "Sam", "Tati", "Val", "Yuri", "Zoe"],
+    "sobrenomes": ["Silva", "Souza", "Oliveira", "Pereira", "Lima", "Carvalho", "Almeida", "Ferreira", "Rodrigues", "Gomes", "Martins", "Rocha", "Ribeiro", "Alves", "Monteiro", "Barbosa", "Cardoso", "Teixeira", "Correia", "Nogueira", "Moraes", "Freitas", "Pinto", "Mendes", "Araújo", "Batista", "Castro", "Campos", "Duarte", "Farias", "Machado", "Nunes", "Ramos", "Reis", "Sales", "Santana", "Vieira"],
+    "uniformes": {
+      "chefe": {"roupa": "#7b3f61", "roupa2": "#f2e8dc", "calca": "#4a2c3e"},
+      "medica": {"roupa": "#2f6fb0", "roupa2": "#f7f7f2", "calca": "#254b73"},
+      "enfermeira": {"roupa": "#2e9e6b", "roupa2": "#f7f7f2", "calca": "#226b4c"},
+      "vacina": {"roupa": "#e07a5f", "roupa2": "#fff4ec", "calca": "#7c3f2c"},
+      "procedimentos": {"roupa": "#8a5fb0", "roupa2": "#f5eefb", "calca": "#4b326a"},
+      "guiche": {"roupa": "#4f6e6a", "roupa2": "#e7f0ef", "calca": "#334744"},
+      "recepcao": {"roupa": "#3f6e4f", "roupa2": "#dfeee2", "calca": "#2b4a35"},
+      "acs": {"roupa": "#2f7fa0", "roupa2": "#e8f5fa", "calca": "#24495c"}
+    }
+  },
+  "funcionarios_sala": [
+    {"id": "chefe", "cargo": "Chefe", "sala": "A", "spot": 0, "cargo_key": "chefe"},
+    {"id": "medica", "cargo": "Médica", "sala": "B", "spot": 0, "cargo_key": "medica"},
+    {"id": "enfermeira", "cargo": "Enfermeira", "sala": "C", "spot": 0, "cargo_key": "enfermeira"},
+    {"id": "vacina_1", "cargo": "Vacina", "sala": "D", "spot": 0, "cargo_key": "vacina"},
+    {"id": "vacina_2", "cargo": "Vacina", "sala": "D", "spot": 1, "cargo_key": "vacina"},
+    {"id": "proc_1", "cargo": "Procedimentos", "sala": "F", "spot": 0, "cargo_key": "procedimentos"},
+    {"id": "proc_2", "cargo": "Procedimentos", "sala": "F", "spot": 1, "cargo_key": "procedimentos"}
+  ],
+  "funcionario_guiche": {
+    "id": "guiche", "cargo": "Guichê", "sala": "", "spot": 0, "cargo_key": "guiche"
+  },
+  "funcionarios_recepcao": {
+    "quantidade": 3,
+    "tempo_atendimento_min_s": 4.0,
+    "tempo_atendimento_max_s": 9.0,
+    "personagens": [
+      {"id": "rec_1"}, {"id": "rec_2"}, {"id": "rec_3"}
+    ]
+  },
+  "funcionarios_acs": {
+    "quantidade": 9,
+    "personagens": [
+      {"id": "acs_1"}, {"id": "acs_2"}, {"id": "acs_3"}, {"id": "acs_4"}, {"id": "acs_5"},
+      {"id": "acs_6"}, {"id": "acs_7"}, {"id": "acs_8"}, {"id": "acs_9"}
+    ]
+  },
+  "jogador": {
+    "nome": "Agente", "pele": "#FFEB3B", "roupa": "#2f6fd0", "roupa2": "#7fb2ff",
+    "calca": "#1f3d73", "cabelo": "#2b1b17", "estilo_cabelo": "curto",
+    "chapeu": "nenhum", "acessorio": "nenhum", "genero": "feminino", "especie": "humano"
+  },
+  "pacientes": {
+    "total_simultaneos": 14,
+    "max_adultos": 12,
+    "chance_crianca": 0.22,
+    "max_criancas_por_adulto": 6,
+    "porcentagem_por_sala": {"A": 1, "B": 32, "C": 32, "D": 10, "F": 20, "recepcao": 5},
+    "chance_segundo_atendimento": 0.18,
+    "tempo_minimo_espera_s": 60.0,
+    "tempo_maximo_espera_s": 300.0,
+    "tolerancia_fila_min_s": 22.0,
+    "tolerancia_fila_max_s": 75.0,
+    "limite_fila_min": 4,
+    "limite_fila_max": 9,
+    "chance_animal": 0.34
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "recurso": {
+    "energia_max": 5.0,
+    "energia_inicial": 5.0,
+    "tarefas_max": 10,
+    "tempo_tarefa_s": 3.2,
+    "custo_tarefa": 0.32,
+    "rendimento_trabalho_por_segundo": 0.3125
+  },
+  "esforco": {
+    "bonus_velocidade": 0.25,
+    "bonus_custo": 0.25,
+    "energia_minima_para_ativar": 0.15,
+    "raio_aura_chefe": 150.0
+  },
+  "copa": {
+    "tempo_cafe_s": 3.0,
+    "ganho_cafe": 1.0
+  },
+  "papo": {
+    "intervalo_min_s": 80.0,
+    "intervalo_max_s": 170.0,
+    "duracao_s": 22.0,
+    "max_ativos": 3
+  },
+  "demandas": {
+    "intervalo_min_s": 7.0,
+    "intervalo_max_s": 14.0,
+    "tempo_vida_min_s": 55.0,
+    "tempo_vida_max_s": 115.0,
+    "tempo_vida_chefe_s": 0.0,
+    "chance_desistencia_por_segundo": 0.01,
+    "chance_paciente_por_segundo": 0.018,
+    "pausa_paciente_s": 20.0
+  },
+  "presenca": {
+    "primeiro_paciente_em_s": 14.0,
+    "novo_paciente_min_s": 9.0,
+    "novo_paciente_max_s": 16.0,
+    "tempo_guiche_min_s": 2.0,
+    "tempo_guiche_max_s": 6.0,
+    "tempo_recepcao_min_s": 4.0,
+    "tempo_recepcao_max_s": 9.0,
+    "tempo_sala_min_s": 18.0,
+    "tempo_sala_max_s": 40.0,
+    "tempo_chefe_min_s": 12.0,
+    "tempo_chefe_max_s": 24.0,
+    "max_fila_guiche": 8
+  },
+  "movimento": {
+    "velocidade_funcionario": 92.0,
+    "velocidade_jogador": 105.0,
+    "velocidade_crianca": 108.0,
+    "fator_energia_minima": 0.55,
+    "raio_chegada": 5.0,
+    "distancia_ao_lado": 28.0
+  },
+  "funcionarios": {
+    "energia_max": 5.0,
+    "energia_inicial_min": 3.4,
+    "energia_inicial_max": 5.0,
+    "custo_atendimento": 0.34,
+    "custo_trabalho_pc_por_s": 0.018,
+    "limiar_energia_baixa": 1.25,
+    "limiar_energia_alta": 3.5,
+    "chance_passeio_medica_s": 0.004,
+    "chance_passeio_enfermeira_s": 0.006,
+    "chance_passeio_auxiliar_s": 0.008,
+    "chance_passeio_recepcao_s": 0.018,
+    "chance_passeio_acs_s": 0.02,
+    "duracao_passeio_min_s": 6.0,
+    "duracao_passeio_max_s": 12.0,
+    "intervalo_passeio_min_s": 25.0,
+    "intervalo_passeio_max_s": 65.0,
+    "chance_visita_chefe_s": 0.006,
+    "tempo_visita_chefe_s": 14.0,
+    "chance_saida_externa_acs_s": 0.01,
+    "tempo_externo_min_s": 35.0,
+    "tempo_externo_max_s": 80.0,
+    "chance_servico_extra_s": 0.02
+  },
+  "pacientes": {
+    "raiva_inicial_min": 0.0,
+    "raiva_inicial_max": 8.0,
+    "raiva_espera_por_s": 1.4,
+    "raiva_fila_longa_por_s": 2.4,
+    "raiva_bom_atendimento": -18.0,
+    "raiva_atendimento_ruim": 22.0,
+    "raiva_limiar_reclamar": 62.0,
+    "raiva_limiar_abandono": 92.0,
+    "energia_reduzida_por_reclamacao": 0.38,
+    "chance_abordagem_raivosa_s": 0.035,
+    "distancia_abordagem": 120.0,
+    "tempo_reclamacao_s": 9.0
+  },
+  "computadores": {
+    "intervalo_sorteio_min_s": 12.0,
+    "intervalo_sorteio_max_s": 28.0,
+    "distribuicao": {
+      "um_interno": 40.0,
+      "uma_recepcao": 40.0,
+      "um_de_cada": 10.0,
+      "nenhum": 10.0
+    },
+    "chance_problema": 0.10,
+    "problema_min_s": 12.0,
+    "problema_max_s": 30.0,
+    "fator_problema_leve": 0.5,
+    "chance_interrupcao_recepcao_por_s": 0.035,
+    "chance_abordagem_interno_por_s": 0.035
+  },
+  "impressora": {
+    "intervalo_min_s": 38.0,
+    "intervalo_max_s": 78.0,
+    "chance_quebra": 0.88,
+    "fios": 3
+  },
+  "exame": {
+    "pastas": 30,
+    "energia_erro": 0.04
+  },
+  "sessao": {
+    "salvar_a_cada_s": 20.0
+  },
+  "equipe": {
+    "animais_minimos": 8,
+    "chance_animal_extra": 0.18
+  },
+  "criancas": {
+    "raio_passeio": 58.0,
+    "velocidade_passeio": 55.0,
+    "distancia_adulto": 34.0
+  },
+  "links": {
+    "google_play": "https://github.com/wavizo-bot/Postinho-de-Saude/releases/latest",
+    "email_desenvolvedor": "mmr05@hotmail.com",
+    "telefone_desenvolvedor": "11978831938",
+    "nome_desenvolvedor": "wavizo"
+  },
+  "audio": {
+    "ativo_padrao": true,
+    "volume": 0.55
+  },
+  "debug": {
+    "mostrar_etiquetas": false
+  }
+}
