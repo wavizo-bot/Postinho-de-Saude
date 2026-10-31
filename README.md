@@ -131,8 +131,8 @@ As pastas `android/` e `build/` são geradas e ignoradas pelo Git. `tools/androi
 
 Antes de publicar, rode os testes de regras e de interface, gere as capturas e os assets, exporte os pacotes e confira os artefatos finais. O resultado esperado nesta versão é:
 
-- regras: **245/245** verificações;
-- interface: **111/111** verificações;
+- regras: **249/249** verificações;
+- interface: **112/112** verificações;
 - capturas: 21 imagens reais em `build/capturas/`;
 - AAB com R8, `mapping.txt`, DEX e assinatura válida;
 - MSIX desempacotado com a mesma versão, ícone e manifesto;
