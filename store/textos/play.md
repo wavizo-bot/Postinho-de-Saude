@@ -1,6 +1,6 @@
 # Google Play — textos da ficha
 
-Versão de referência: 1.0.0
+Versão de referência: 1.0.1
 Pacote: `br.com.postinhodesaude.jogo`
 Categoria sugerida: Jogos / Simulação
 Classificação etária sugerida: Livre / 12+ conforme questionário da Play Console
@@ -47,7 +47,7 @@ Postinho de Saúde é um jogo independente de entretenimento. Não é sistema of
 
 Android 7.0 ou superior, arm64-v8a. Funciona offline. Conteúdo em português do Brasil.
 
-Versão 1.0.0 • desenvolvido por wavizo • contato: mmr05@hotmail.com
+Versão 1.0.1 • desenvolvido por wavizo • contato: mmr05@hotmail.com
 
 ## Palavras-chave sugeridas
 

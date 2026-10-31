@@ -4,7 +4,7 @@
 
 [![Visão geral do Postinho de Saúde](docs/assets/tela-01-1366.webp)](docs/assets/tela-01-1366.webp)
 
-**Versão atual:** 1.0.0 (Android `versionCode 1`, MSIX `1.0.0.0`) • **Plataformas:** Android 7+ (arm64) e Windows 10/11 (x64) • **Site:** [wavizo-bot.github.io/Postinho-de-Saude](https://wavizo-bot.github.io/Postinho-de-Saude/) • **Download:** [página do app](https://wavizo-bot.github.io/Postinho-de-Saude/app/) • **Release:** [v1.0.0.0](https://github.com/wavizo-bot/Postinho-de-Saude/releases/tag/v1.0.0.0)
+**Versão atual:** 1.0.1 (Android `versionCode 2`, MSIX `1.0.1.0`) • **Plataformas:** Android 7+ (arm64) e Windows 10/11 (x64) • **Site:** [wavizo-bot.github.io/Postinho-de-Saude](https://wavizo-bot.github.io/Postinho-de-Saude/) • **Download:** [página do app](https://wavizo-bot.github.io/Postinho-de-Saude/app/) • **Release:** [v1.0.1.0](https://github.com/wavizo-bot/Postinho-de-Saude/releases/tag/v1.0.1.0)
 
 > **Aviso:** este é um jogo independente, fictício e humorístico. Não é sistema oficial do SUS, de prefeitura ou de qualquer órgão público; não é prontuário, dispositivo médico, treinamento certificado ou ferramenta de decisão clínica. Nomes, personagens e situações são inventados.
 
@@ -82,7 +82,7 @@ Os segredos de assinatura ficam **fora do repositório**, em um cofre local. Os 
 powershell -ExecutionPolicy Bypass -File tools\build_msix.ps1
 ```
 
-Gera `build/windows/PostinhoDeSaude.exe`, o MSIX `1.0.0.0`, o certificado público `.cer` e o relatório de verificação. Para instalar por sideload, o certificado precisa estar em `LocalMachine\Root` e `LocalMachine\TrustedPeople` (executar como administrador) antes de `Add-AppxPackage`. A Microsoft Store reassina o pacote; o certificado do projeto serve para teste local.
+Gera `build/windows/PostinhoDeSaude.exe`, o MSIX `1.0.1.0`, o certificado público `.cer` e o relatório de verificação. Para instalar por sideload, o certificado precisa estar em `LocalMachine\Root` e `LocalMachine\TrustedPeople` (executar como administrador) antes de `Add-AppxPackage`. A Microsoft Store reassina o pacote; o certificado do projeto serve para teste local.
 
 ### Android / AAB
 
@@ -142,8 +142,8 @@ Antes de publicar, rode os testes de regras e de interface, gere as capturas e o
 
 - **Nome:** Postinho de Saúde
 - **Pacote Android:** `br.com.postinhodesaude.jogo`
-- **Android:** `versionCode 1`, `versionName 1.0.0`, `minSdk 24`, `targetSdk 36`
-- **MSIX Identity:** `Postinho.PostinhoDeSaude`, Publisher `CN=Postinho de Saude`, versão `1.0.0.0`
+- **Android:** `versionCode 2`, `versionName 1.0.1`, `minSdk 24`, `targetSdk 36`
+- **MSIX Identity:** `Postinho.PostinhoDeSaude`, Publisher `CN=Postinho de Saude`, versão `1.0.1.0`
 - **Categoria:** jogo / simulação casual
 - **Contato:** mmr05@hotmail.com • +55 11 97883-1938
 
@@ -165,7 +165,7 @@ O projeto é disponibilizado para uso pessoal, educativo e não comercial, confo
 
 ## English summary
 
-Postinho de Saúde is an independent, offline comedy simulation game about the daily routine of a Brazilian Community Health Agent (ACS). You welcome patients, handle requests, use computers, fix the printer, search for exam folders and keep the clinic running — with fictional names, anthropomorphic animal characters and no score, game over or real patient data. It is available for Android 7+ (arm64) and Windows 10/11 (x64), stores progress locally only, and is **not** an official SUS/government system, medical record or clinical decision tool. The current version is 1.0.0. Store publication is pending external accounts; builds are distributed through the download page and GitHub Releases.
+Postinho de Saúde is an independent, offline comedy simulation game about the daily routine of a Brazilian Community Health Agent (ACS). You welcome patients, handle requests, use computers, fix the printer, search for exam folders and keep the clinic running — with fictional names, anthropomorphic animal characters and no score, game over or real patient data. It is available for Android 7+ (arm64) and Windows 10/11 (x64), stores progress locally only, and is **not** an official SUS/government system, medical record or clinical decision tool. The current version is 1.0.1. Store publication is pending external accounts; builds are distributed through the download page and GitHub Releases.
 
 ## Contato
 

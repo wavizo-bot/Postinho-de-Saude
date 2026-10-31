@@ -1,6 +1,6 @@
 ================================================================================
 MANUAL DO PROJETO — POSTINHO DE SAÚDE
-Versão 1.0.0 • atualizado em 30/10/2026
+Versão 1.0.1 • atualizado em 31/10/2026
 Fonte de retomada: leia este arquivo antes de mexer no projeto.
 ================================================================================
 
@@ -22,9 +22,9 @@ serviços públicos. Conteúdo em português do Brasil.
 
 2. ESTADO ATUAL
 --------------------------------------------------------------------------------
-Versão carimbada: 1.0.0.
-Android: versionCode 1, versionName 1.0.0, minSdk 24, targetSdk 36, arm64-v8a.
-Windows/MSIX: 1.0.0.0, x64.
+Versão carimbada: 1.0.1.
+Android: versionCode 2, versionName 1.0.1, minSdk 24, targetSdk 36, arm64-v8a.
+Windows/MSIX: 1.0.1.0, x64.
 Canal: release.
 Licença: uso pessoal/educativo não comercial; ver LICENSE e Termos.
 
@@ -33,8 +33,9 @@ Status de entrega:
 - Landing, documentos legais e página /app/: publicados no GitHub Pages.
 - Build Android AAB com R8: gerado e verificado localmente.
 - Build Windows/MSIX: gerado, instalado e aberto nesta máquina; gameplay conferido.
-- Repositório público, Pages e release v1.0.0.0: publicados em 30/10/2026.
-- Teste em aparelho Android físico: PENDENTE (sem depuração USB/sem fio ativa).
+- Repositório público, Pages e release v1.0.1.0: publicados em 31/10/2026.
+- Teste em aparelho Android físico: APK universal instalado e aberto no Xiaomi
+  2410CRP4CG (Android 16/API 36); menu, informações e jogabilidade tocados.
 - Publicação na Google Play: PENDENTE (conta/credenciais externas).
 - Publicação na Microsoft Store: PENDENTE (conta/credenciais externas).
 - Teste de instalação do MSIX em outra máquina: PENDENTE.
@@ -83,6 +84,7 @@ tests/
 tools/
   build_android_aab.ps1  export AAB, R8, assinatura, APK universal e verificação
   build_msix.ps1         export Windows, MSIX, assinatura e verificação
+  exportar_godot.ps1     watchdog de export headless (mata o editor após DONE)
   preparar_android.ps1   extrai template e aplica R8
   stamp_version.ps1      carimba e confere a versão
   segredos.ps1           lê o cofre local e patcha/restaura o preset
@@ -173,11 +175,11 @@ Rodar por linha de comando (dentro da raiz):
 
 Testes de regras (headless):
   godot --headless --path . --script res://tests/testes.gd
-Resultado esperado nesta versão: TODOS OS 245 TESTES PASSARAM.
+Resultado esperado nesta versão: TODOS OS 249 TESTES PASSARAM.
 
 Teste de interface (precisa de janela, nunca --headless):
   godot --path . --resolution 1280x720 --script res://tests/cliques.gd
-Resultado esperado: CLIQUES OK: 111 verificações.
+Resultado esperado: CLIQUES OK: 112 verificações.
 O teste usa e restaura o save real do jogador.
 
 Capturas reais:
@@ -190,8 +192,8 @@ O script lê project.godot e export_presets.cfg, falha se divergirem e grava
 version.json. O app lê version.json; no Android, confirma o pacote instalado pelo
 PackageManager (AndroidRuntime).
 
-Execução confirmada em 30/10/2026: TODOS OS 245 TESTES PASSARAM e
-CLIQUES OK: 111 verificações. Os avisos de ObjectDB no fim dos testes são
+Execução confirmada em 31/10/2026: TODOS OS 249 TESTES PASSARAM e
+CLIQUES OK: 112 verificações. Os avisos de ObjectDB no fim dos testes são
 conhecidos do Godot e não indicam falha funcional.
 
 8. CREDENCIAIS E SEGREDOS
@@ -226,9 +228,9 @@ AAB, APK, MSIX e .cer com nomes estáveis e gera SHA256SUMS.txt.
 
 Para instalar localmente, importe o .cer em LocalMachine\Root e
 LocalMachine\TrustedPeople (admin) e use Add-AppxPackage. O certificado de teste
-serve só para sideload; a Microsoft Store reassina o pacote. O MSIX 1.0.0.0 foi
-instalado e aberto nesta máquina; a tela inicial mostrou v1.0.0 e o mundo do jogo
-carregou normalmente.
+serve só para sideload; a Microsoft Store reassina o pacote. O MSIX 1.0.1.0 foi
+instalado e aberto nesta máquina; a tela inicial mostrou v1.0.1, "Começar o dia"
+entrou no posto e o gameplay rodou normalmente.
 
 10. BUILD ANDROID / AAB
 --------------------------------------------------------------------------------
@@ -248,40 +250,49 @@ está configurado com R8 full mode, minifyEnabled true, shrinkResources true e
 proguard-rules.pro próprio em tools/android/. O AGP é fixado em 8.10.1 para que
 o AAB inclua o r8.json exigido pelo relatório de otimização da Google Play.
 
-Artefatos finais de 30/10/2026:
-- AAB 25.753.160 bytes, SHA256 F72B578B2127DC01319081116CFB4637BBDA12A504318DE30CC543791496660F.
-- APK universal 73.573.172 bytes, SHA256 5A3F66D7224A06EF520B3AC370AE5A71536FD97BE25C4E0F0BBFF6472A3D6596.
-- APKS 73.573.506 bytes, SHA256 E4DDD44C1D463E0A925E0572BD77156F9DBFB2B95BF4B8C0A8377CB2D788ECE8.
+Artefatos finais de 31/10/2026:
+- AAB 25.753.431 bytes, SHA256 BDC3669A033FFC8AFD156FE9D5D1624A00EB1F79D443018D34738D6E9FCEBF82.
+- APK universal 73.573.172 bytes, SHA256 372DD8B16EB6ACAEA717D55975D43460A41428C3CF41A4C5AF4F1D452D50F186.
+- APKS 73.573.506 bytes, SHA256 586ECB038D907669E488D5103FA86880C75D68BFE78B54951223C0CABAF4AB4E.
 - R8 8.10.24; mapping.txt 2.508.326 bytes; 1 DEX; 1 nativo; targetSdk 36;
   minSdk 24; sem AD_ID; jarsigner e apksigner aprovados.
 
 11. TESTE NO APARELHO E IMPEDIMENTOS
 --------------------------------------------------------------------------------
-Aparelho alvo informado: Xiaomi 2410CRP4CG. Em 30/10/2026 o `adb devices` estava
-vazio. O mDNS anunciava 192.168.31.105:40793, mas `adb connect` retornava conexão
-recusada. Falta ativar depuração USB ou depuração sem fio com pareamento válido.
-Sem isso, não foi possível instalar/abrir o APK universal no aparelho nem validar
-a leitura dinâmica da versão pelo PackageManager em hardware real.
+Aparelho alvo: Xiaomi 2410CRP4CG, Android 16/API 36, arm64-v8a. Em 31/10/2026 o
+aparelho foi conectado por depuração sem fio (adb transport 1). O APK universal
+1.0.1 foi instalado com sucesso (versionCode 2, versionName 1.0.1) e aberto.
+
+Testes feitos no aparelho:
+- a primeira abertura mostrou a tela inicial, com "Continuar sessão" e v1.0.1;
+- "Continuar sessão" carregou o save e entrou no posto;
+- o toque abriu o menu, pausou a simulação e navegou até "Informações", que exibiu
+  "Versão 1.0.1 (build 2)";
+- o jogo permaneceu vivo, sem FATAL EXCEPTION, com o PID estável durante o teste.
+O defeito visto na primeira instalação (About com "Versão <null> (build 1)") foi
+corrigido: o JNI só aceita versionName numérico e o version.json do build serve de
+fallback. A tela inicial também passou a aparecer sempre, mesmo sem save.
 
 Outros impedimentos:
 - Contas/credenciais da Google Play e da Microsoft Store não fornecidas; uploads
   de loja não realizados.
-- Teste do MSIX em máquina limpa não realizado; nesta máquina o pacote foi
-  instalado, aberto e o gameplay foi conferido.
+- Teste do MSIX em máquina limpa não realizado; nesta máquina o pacote 1.0.1.0
+  foi instalado, aberto e o gameplay foi conferido.
 - Não há versão web jogável; docs/app/ é página de download.
 - Logs de teste podem exibir avisos de vazamento ObjectDB do Godot; os testes
-  terminam com 245/245 e 111/111 e não indicam falha funcional.
+  terminam com 249/249 e 112/112 e não indicam falha funcional.
 
 12. PUBLICAÇÃO GITHUB / PAGES / RELEASE
 --------------------------------------------------------------------------------
-Publicado em 30/10/2026:
+Publicado em 30/10/2026 (1.0.0.0) e 31/10/2026 (1.0.1.0):
 - Repositório público: https://github.com/wavizo-bot/Postinho-de-Saude
-- Branch main, remoto origin, commit 59eddb39457b4472efc50773b71f3dc6bdf598ae.
+- Branch main, remoto origin.
 - Pages: Deploy from a branch, main, /docs, HTTPS.
   https://wavizo-bot.github.io/Postinho-de-Saude/
-- Release: tag v1.0.0.0, com AAB, APK universal, MSIX, certificado .cer,
+- Release atual: tag v1.0.1.0, com AAB, APK universal, MSIX, certificado .cer,
   SHA256SUMS.txt e notas de versão.
-  https://github.com/wavizo-bot/Postinho-de-Saude/releases/tag/v1.0.0.0
+  https://github.com/wavizo-bot/Postinho-de-Saude/releases/tag/v1.0.1.0
+- Release v1.0.0.0 mantida como histórica.
 - A página docs/app/ lista os mesmos arquivos e os mesmos SHA256 da release.
 - Testes públicos: HTTP 200 em /, /app/, documentos legais, imagens, favicon,
   robots, sitemap, repositório e release; layouts 1366x768 e 390x844 sem overflow.
@@ -309,6 +320,15 @@ commitar em main, aguardar o build do Pages e repetir os testes de URL e layout.
 - O APK universal é para teste; o AAB é o artefato de loja.
 - A versão exibida deve continuar vindo de VersaoPostinho, não de texto fixo.
 - O repositório é a fonte da verdade: Pages e release saem do commit de main.
+- O Godot 4.7.2 no Windows conclui o export headless mas pode continuar vivo
+  depois de "[ DONE ] export". Usar sempre tools/exportar_godot.ps1; chamar o
+  export direto prende o build e impede o finally de restaurar o preset.
+- Se um build for interrompido, conferir export_presets.cfg antes de qualquer
+  commit; keystore e senhas devem continuar vazios no repositório.
+- O JNI do Android pode devolver "<null>" para versionName. VersaoPostinho só
+  aceita texto numérico e cai para o version.json carimbado.
+- A tela inicial aparece sempre; com save oferece continuar ou nova sessão, sem
+  save oferece começar o dia.
 
 14. TIMELINE RESUMIDA
 --------------------------------------------------------------------------------
@@ -323,26 +343,10 @@ commitar em main, aguardar o build do Pages e repetir os testes de URL e layout.
 - 31/10/2026: verificação pública final; os quatro assets da release foram
   baixados e conferidos por SHA256; testes repetidos 245/245 e 111/111; Pages
   reconstruído para o commit de documentação 072a1ac.
-- Pendente: teste em aparelho Android físico, teste do MSIX em máquina limpa,
-  publicação nas lojas e eventual feedback de usuários.
-
-16. ARTEFATOS E CHECKSUMS DA VERSÃO 1.0.0
---------------------------------------------------------------------------------
-Pasta local build/entrega/ (gerada por tools/preparar_entrega.ps1):
-- PostinhoDeSaude-1.0.0.aab — 25.753.160 bytes
-  SHA256 F72B578B2127DC01319081116CFB4637BBDA12A504318DE30CC543791496660F
-- PostinhoDeSaude-1.0.0-universal.apk — 73.573.172 bytes
-  SHA256 5A3F66D7224A06EF520B3AC370AE5A71536FD97BE25C4E0F0BBFF6472A3D6596
-- PostinhoDeSaude-1.0.0.0-x64.msix — 39.750.722 bytes
-  SHA256 7C6FE441C879E9C6F318CE75AEF0404F247433204588C3F84145E90D5E9CCDE3
-- PostinhoDeSaude-teste.cer — 702 bytes
-  SHA256 2366173E67F77883DE49601264DC10FFB1569688D05CA87970AC1B008AECB988
-- SHA256SUMS.txt — checksums dos quatro arquivos acima.
-
-Esses mesmos arquivos estão na release v1.0.0.0. A release também pode ser
-conferida pela API do GitHub; o SHA256SUMS.txt publicado deve ser idêntico ao
-local. O certificado .cer é público e serve para o sideload do MSIX de teste;
-o .pfx correspondente permanece no cofre fora do repositório.
+- 31/10/2026: teste no Xiaomi 2410CRP4CG; corrigidos o About "<null>" e a tela
+  inicial pulada; versão 1.0.1 (versionCode 2, MSIX 1.0.1.0); testes 249/249 e
+  112/112; watchdog de export; novos artefatos e release v1.0.1.0.
+- Pendente: teste do MSIX em máquina limpa, publicação nas lojas e feedback.
 
 15. CONTATO E RETOMADA
 --------------------------------------------------------------------------------
@@ -350,4 +354,22 @@ Contato: mmr05@hotmail.com • +55 11 97883-1938.
 Para retomar: leia README.md, este manual, AJUSTES.md e o log.txt local; rode os
 dois testes; confira version.json e export_presets.cfg; gere os assets; exporte os
 pacotes; verifique os artefatos; publique somente depois de GH9.
+
+16. ARTEFATOS E CHECKSUMS DA VERSÃO 1.0.1
+--------------------------------------------------------------------------------
+Pasta local build/entrega/ (gerada por tools/preparar_entrega.ps1):
+- PostinhoDeSaude-1.0.1.aab — 25.753.431 bytes
+  SHA256 BDC3669A033FFC8AFD156FE9D5D1624A00EB1F79D443018D34738D6E9FCEBF82
+- PostinhoDeSaude-1.0.1-universal.apk — 73.573.172 bytes
+  SHA256 372DD8B16EB6ACAEA717D55975D43460A41428C3CF41A4C5AF4F1D452D50F186
+- PostinhoDeSaude-1.0.1.0-x64.msix — 39.751.189 bytes
+  SHA256 0A1C1407E93706F07D4C73599066ABAC65AA2D59364050059DE1E355979FCB18
+- PostinhoDeSaude-teste.cer — 702 bytes
+  SHA256 2366173E67F77883DE49601264DC10FFB1569688D05CA87970AC1B008AECB988
+- SHA256SUMS.txt — checksums dos quatro arquivos acima.
+
+Esses mesmos arquivos estão na release v1.0.1.0. A release também pode ser
+conferida pela API do GitHub; o SHA256SUMS.txt publicado deve ser idêntico ao
+local. O certificado .cer é público e serve para o sideload do MSIX de teste;
+o .pfx correspondente permanece no cofre fora do repositório.
 ================================================================================

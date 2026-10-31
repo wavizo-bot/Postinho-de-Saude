@@ -13,6 +13,7 @@
 
 $ErrorActionPreference = "Stop"
 . (Join-Path $PSScriptRoot "segredos.ps1")
+. (Join-Path $PSScriptRoot "exportar_godot.ps1")
 
 $raiz = Split-Path -Parent $PSScriptRoot
 $godot = if ($env:GODOT_BIN) { $env:GODOT_BIN } else { "C:\Users\Maycon\tools\godot\Godot_v4.7.2-stable_win64_console.exe" }
@@ -53,8 +54,7 @@ $sha = Join-Path $saida "SHA256.txt"
 $original = Set-PresetAndroidSegredo -Arquivo $preset -Segredos $segredos
 try {
     Write-Host "Exportando AAB $($versao.versao) com R8..."
-    & $godot --headless --path $raiz --export-release "Android AAB" $aab
-    if ($LASTEXITCODE -ne 0) { throw "Falha na exportacao do AAB." }
+    Invoke-GodotExport -Godot $godot -Raiz $raiz -Preset "Android AAB" -Destino $aab
 } finally {
     Restore-Arquivo -Arquivo $preset -Conteudo $original
 }

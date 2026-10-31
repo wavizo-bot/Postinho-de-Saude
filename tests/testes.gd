@@ -135,6 +135,14 @@ func _testar_versao() -> void:
 		"texto curto da versao tem prefixo v")
 	checar(VersaoScript.completo().contains(str(info.get("versao", ""))),
 		"texto completo mostra a versao do pacote")
+	checar(VersaoScript.nome_valido("1.0.0") == "1.0.0",
+		"nome de versao numerico e aceito")
+	checar(VersaoScript.nome_valido("<null>").is_empty(),
+		"nome de versao nulo do JNI e descartado")
+	checar(VersaoScript.nome_valido("null").is_empty(),
+		"texto null do JNI e descartado")
+	checar(VersaoScript.nome_valido("").is_empty(),
+		"nome de versao vazio e descartado")
 
 
 func _testar_dados() -> void:

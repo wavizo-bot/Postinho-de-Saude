@@ -3,15 +3,17 @@ class_name VersaoPostinho
 ##
 ## Ordem de leitura:
 ##   1. version.json carimbado no build (fonte da verdade do repositório);
-##   2. PackageManager do Android, quando disponível, para confirmar o pacote
-##      realmente instalado (versionName/versionCode);
+##   2. PackageManager do Android, quando devolve um nome válido, para confirmar
+##      o pacote realmente instalado (versionName/versionCode);
 ##   3. application/config/version do projeto, como último recurso no editor.
 ##
 ## O jogo não tem host nativo próprio: no Windows a versão carimbada no build é
-## a versão do MSIX (1.0.0.0). No Android o PackageManager corrige o valor.
+## a versão do MSIX (por exemplo, 1.0.1.0). No Android o PackageManager confirma o valor
+## quando o JNI entrega uma string utilizável; caso contrário, o version.json
+## carimbado no PCK continua valendo.
 
 const ARQUIVO := "res://version.json"
-const VERSAO_PADRAO := "1.0.0"
+const VERSAO_PADRAO := "1.0.1"
 
 static var _cache: Dictionary = {}
 static var _lido := false
@@ -91,12 +93,27 @@ static func _ler_android() -> Dictionary:
 	var dados = gerenciador.getPackageInfo(pacote, 0)
 	if dados == null:
 		return {}
-	var nome := str(dados.versionName)
+	var nome := nome_valido(dados.versionName)
 	if nome.is_empty():
 		return {}
 	# versionCode é campo int desde a API 1; evita getLongVersionCode (API 28+)
 	# e mantém o minSdk 24.
 	var codigo := int(dados.versionCode)
 	if codigo <= 0:
-		codigo = int(info().get("codigo", 1))
+		codigo = int(_cache.get("codigo", 1))
 	return {"nome": nome, "codigo": codigo}
+
+
+static func nome_valido(valor) -> String:
+	# O JNI pode devolver <null> ou um objeto Java em vez de String. Só aceita
+	# texto numérico; caso contrário, o version.json do build permanece.
+	if not (valor is String or valor is StringName):
+		return ""
+	var texto := str(valor).strip_edges()
+	if texto.is_empty():
+		return ""
+	var regex := RegEx.new()
+	regex.compile("^[0-9]+(\\.[0-9]+){1,3}$")
+	if regex.search(texto) == null:
+		return ""
+	return texto

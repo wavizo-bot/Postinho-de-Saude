@@ -9,10 +9,10 @@ Depois de qualquer mudanca, rode os testes para garantir que nada quebrou:
 godot --headless --path . --script res://tests/testes.gd
 ```
 
-Deve terminar com "TODOS OS 245 TESTES PASSARAM".
+Deve terminar com "TODOS OS 249 TESTES PASSARAM".
 
 O teste de interface precisa de janela, nunca de `--headless`, e termina com
-"CLIQUES OK: 111 verificacoes". Ele usa e depois restaura o save real do jogador:
+"CLIQUES OK: 112 verificacoes". Ele usa e depois restaura o save real do jogador:
 
 ```
 godot --path . --resolution 1280x720 --script res://tests/cliques.gd
@@ -29,8 +29,8 @@ Ou abra a pasta no editor do Godot e aperte F5.
 ## Sessao, tela inicial e save
 
 * Existe um unico slot: `user://sessao_postinho.dat`.
-* Ao abrir o jogo, a tela inicial oferece **Continuar sessao** ou **Comecar o dia**.
-  Sem save, so a segunda opcao aparece.
+* Ao abrir o jogo, a tela inicial aparece sempre. Com save, oferece **Continuar
+  sessao** ou **Nova sessao**; sem save, oferece **Comecar o dia**.
 * O jogo salva sozinho a cada 20 s, ao fechar a janela e ao sair pelo sistema.
 * Continuar restaura equipe, pacientes, criancas, salas, PCs, impressora e o jogador.
 * Pacientes e criancas de saves antigos que ainda tinham nomes como "Paciente 3"
@@ -188,7 +188,7 @@ Se quiser acentos, pode editar direto no JSON; o Godot le UTF-8 normalmente.
 ## Gerar os pacotes
 
 * Windows exe: `godot --headless --path . --export-release "Windows Desktop" build/windows/PostinhoDeSaude.exe`
-* MSIX: `powershell -ExecutionPolicy Bypass -File tools\build_msix.ps1` (gera `build\msix\PostinhoDeSaude_1.0.0.0_x64.msix`).
+* MSIX: `powershell -ExecutionPolicy Bypass -File tools\build_msix.ps1` (gera `build\msix\PostinhoDeSaude_1.0.1.0_x64.msix`).
   Para instalar numa maquina, o certificado público `build\msix\PostinhoDeSaude-teste.cer` precisa estar em
   `LocalMachine\Root` e `LocalMachine\TrustedPeople` (como administrador). O `.pfx` com a chave
   privada fica fora do repositório, no cofre local de credenciais.
@@ -196,7 +196,7 @@ Se quiser acentos, pode editar direto no JSON; o Godot le UTF-8 normalmente.
 * Android AAB: `powershell -ExecutionPolicy Bypass -File tools\build_android_aab.ps1`
   (gera `build\android\PostinhoDeSaude.aab`, assinado com o keystore do cofre local).
   O AAB e assinado no formato JAR; confira com `jarsigner -verify`, nao com `apksigner`.
-* APK universal: o próprio `build_android_aab.ps1` gera `build\android\PostinhoDeSaude-1.0.0.apk`
+* APK universal: o próprio `build_android_aab.ps1` gera `build\android\PostinhoDeSaude-1.0.1.apk`
   com o bundletool e assina com a chave de release. O `.apks` intermediário fica em
   `build\android\PostinhoDeSaude.apks`.
 * Pasta de entrega: `powershell -ExecutionPolicy Bypass -File tools\preparar_entrega.ps1`

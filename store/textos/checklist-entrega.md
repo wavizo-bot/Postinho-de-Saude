@@ -1,6 +1,6 @@
 # Checklist de assets e fichas de loja
 
-Versão de referência: 1.0.0
+Versão de referência: 1.0.1
 
 ## Google Play
 
@@ -24,7 +24,7 @@ Versão de referência: 1.0.0
 - [x] Faixa 1080x80: `store/microsoft/faixa_1080x80.png`
 - [x] Ícone/StoreLogo 1:1: `tools/msix/Assets/StoreLogo.png`
 - [x] Textos de ficha: `store/textos/microsoft.md`
-- [x] MSIX 1.0.0.0 assinado para teste e manifesto conferido
+- [x] MSIX 1.0.1.0 assinado para teste e manifesto conferido
 - [ ] Conta Partner Center, reserva de nome e upload (credenciais externas)
 - [ ] Certificado de produção compatível com o Publisher reservado
 - [ ] Teste de instalação em máquina limpa
@@ -39,7 +39,7 @@ Versão de referência: 1.0.0
 - [x] Resumo em inglês
 - [x] Teste HTTP 200 após o deploy
 - [x] Teste visual em 1366x768 e 390x844
-- [x] Release v1.0.0.0 publicada com pacotes e checksums
+- [x] Release v1.0.1.0 publicada com pacotes e checksums
 
 ## Regras de conteúdo
 
@@ -50,4 +50,4 @@ Versão de referência: 1.0.0
 - [x] Nenhuma promessa de função inexistente (multiplayer, nuvem, versão web).
 - [x] Aviso de jogo independente, não oficial e não médico nas fichas e na
       landing.
-- [x] Versão 1.0.0 coerente em landing, /app/, README, manual, pacotes e lojas.
+- [x] Versão 1.0.1 coerente em landing, /app/, README, manual, pacotes e lojas.

@@ -43,6 +43,7 @@ func _initialize() -> void:
 		print("FALHA: a cena principal nao carregou o HUD ou o jogo")
 		quit(1)
 		return
+	_checar(bool(hud.tela_inicio), "a tela inicial aparece logo ao abrir o jogo")
 	await _testar_tela_inicio()
 	await _aguardar(4.0, func(): return hud.botoes.size() > 0)
 	_checar(hud.botoes.size() > 0, "o HUD desenhou os botoes")

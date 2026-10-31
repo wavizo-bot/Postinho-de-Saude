@@ -1,6 +1,6 @@
 # Data Safety / Segurança dos dados — respostas sugeridas
 
-Versão de referência: 1.0.0
+Versão de referência: 1.0.1
 Pacote: `br.com.postinhodesaude.jogo`
 
 ## Resumo
@@ -82,4 +82,4 @@ aplicativo ou desinstalando-o.”
 - [ ] Não há SDK de anúncios/analytics no AAB/MSIX.
 - [ ] Não há permissão `AD_ID` no manifesto Android.
 - [ ] A ficha não promete função inexistente.
-- [ ] O texto da loja e a política usam a mesma versão 1.0.0.
+- [ ] O texto da loja e a política usam a mesma versão 1.0.1.

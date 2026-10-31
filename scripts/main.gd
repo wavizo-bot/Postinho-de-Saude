@@ -65,7 +65,9 @@ func _ready() -> void:
 	get_viewport().size_changed.connect(_ao_mudar_tela)
 	camera.position = Vector2(720, 450)
 	camera.zoom = Vector2(ZOOM_INICIAL, ZOOM_INICIAL)
-	hud.tela_inicio = gm.tem_sessao()
+	# A tela inicial sempre aparece; com save ela oferece continuar ou nova
+	# sessão, sem save ela oferece começar o dia.
+	hud.tela_inicio = true
 	queue_redraw()
 
 

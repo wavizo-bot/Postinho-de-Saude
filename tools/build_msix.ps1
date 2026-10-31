@@ -17,6 +17,7 @@ param([switch]$SemExportar)
 
 $ErrorActionPreference = "Stop"
 . (Join-Path $PSScriptRoot "segredos.ps1")
+. (Join-Path $PSScriptRoot "exportar_godot.ps1")
 
 $raiz = Split-Path -Parent $PSScriptRoot
 $godot = if ($env:GODOT_BIN) { $env:GODOT_BIN } else { "C:\Users\Maycon\tools\godot\Godot_v4.7.2-stable_win64_console.exe" }
@@ -50,8 +51,7 @@ New-Item -ItemType Directory -Force -Path $staging, $saida, $entrega | Out-Null
 
 if (-not $SemExportar) {
     Write-Host "Exportando Windows $($versao.versao)..."
-    & $godot --headless --path $raiz --export-release "Windows Desktop" (Join-Path $origem "$nome.exe")
-    if ($LASTEXITCODE -ne 0) { throw "Falha na exportacao Windows." }
+    Invoke-GodotExport -Godot $godot -Raiz $raiz -Preset "Windows Desktop" -Destino (Join-Path $origem "$nome.exe")
 }
 if (-not (Test-Path (Join-Path $origem "$nome.exe"))) {
     throw "Build Windows nao encontrado. Rode o export do Godot primeiro."

@@ -1,6 +1,6 @@
 # Microsoft Store — textos da ficha
 
-Versão de referência: 1.0.0.0
+Versão de referência: 1.0.1.0
 Identidade do pacote: `Postinho.PostinhoDeSaude`
 Publisher: `CN=Postinho de Saude`
 Categoria sugerida: Jogos / Simulação / Casual
@@ -47,7 +47,7 @@ Postinho de Saúde é um jogo independente de entretenimento. Não é sistema of
 
 Windows 10 versão 1809 ou superior / Windows 11, x64. Tela em paisagem recomendada. Funciona offline. Conteúdo em português do Brasil.
 
-Versão 1.0.0.0 • wavizo • mmr05@hotmail.com • +55 11 97883-1938
+Versão 1.0.1.0 • wavizo • mmr05@hotmail.com • +55 11 97883-1938
 
 ## Recursos da ficha
 

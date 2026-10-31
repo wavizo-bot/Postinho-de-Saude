@@ -96,7 +96,7 @@ def fundo_verde(tamanho: tuple[int, int]) -> Image.Image:
     return Image.alpha_composite(img, bolhas)
 
 
-def painel_texto(tamanho: tuple[int, int], titulo: str, subtitulo: str, bullets: list[str], rodape: str = "v1.0.0") -> Image.Image:
+def painel_texto(tamanho: tuple[int, int], titulo: str, subtitulo: str, bullets: list[str], rodape: str = "v1.0.1") -> Image.Image:
     largura, altura = tamanho
     img = fundo_verde(tamanho)
     d = ImageDraw.Draw(img)
@@ -183,7 +183,7 @@ def faixa() -> Image.Image:
     img.alpha_composite(icone, (16, 12))
     d.text((86, 17), "POSTINHO DE SAÚDE", font=fonte(30), fill=BRANCO)
     d.text((86, 50), "A rotina do ACS virou jogo • offline • Android e Windows", font=fonte(15, negrito=False), fill=CINZA)
-    d.text((largura - 120, 28), "v1.0.0", font=fonte(18), fill=PELE)
+    d.text((largura - 120, 28), "v1.0.1", font=fonte(18), fill=PELE)
     return img
 
 

@@ -1,7 +1,7 @@
 {
-    "versao":  "1.0.0",
-    "codigo":  1,
-    "windows":  "1.0.0.0",
-    "android":  "1.0.0",
+    "versao":  "1.0.1",
+    "codigo":  2,
+    "windows":  "1.0.1.0",
+    "android":  "1.0.1",
     "canal":  "release"
 }
