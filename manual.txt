@@ -320,6 +320,9 @@ commitar em main, aguardar o build do Pages e repetir os testes de URL e layout.
 - 30/10/2026: builds finais Windows/MSIX e Android/AAB; MSIX instalado, aberto e
   com gameplay conferido; publicação GitHub Pages e release v1.0.0.0; URLs
   públicas e layouts 1366x768/390x844 testados.
+- 31/10/2026: verificação pública final; os quatro assets da release foram
+  baixados e conferidos por SHA256; testes repetidos 245/245 e 111/111; Pages
+  reconstruído para o commit de documentação 072a1ac.
 - Pendente: teste em aparelho Android físico, teste do MSIX em máquina limpa,
   publicação nas lojas e eventual feedback de usuários.
 
